@@ -519,6 +519,8 @@ footer a:hover{color:var(--white)}
 .footer-brand .display{font-size:24px;color:var(--white)}
 .footer-brand p{font-size:13px;margin-top:10px;max-width:320px;line-height:1.7}
 .footer-bottom{display:flex;justify-content:space-between;padding-top:24px;font-size:12px;color:rgba(255,255,255,.4);flex-wrap:wrap;gap:10px}
+.sponsor-imk{display:inline-flex;align-items:center;gap:10px}
+.imk-logo{height:30px;width:auto;background:#fff;padding:5px 9px;border-radius:4px;display:block}
 
 /* Utility */
 .divider-note{
@@ -634,7 +636,7 @@ footer a:hover{color:var(--white)}
           <a href="#winners/media">Concert Videos &amp; Photos</a>
         </div>
       </div>
-      <a class="apply-btn js-apply" href="#apply">Apply Online</a>
+      <a class="apply-btn js-apply" href="#home">Apply Online</a>
     </nav>
 
     <div class="dday" id="ddayBox" aria-live="off">
@@ -713,7 +715,7 @@ footer a:hover{color:var(--white)}
         are already confirmed. A privilege no other international competition
         offers.</p>
       <div class="hero-ctas">
-        <a class="btn-gold js-apply" href="#apply">Apply Online</a>
+        <a class="btn-gold js-apply" href="#home">Apply Online</a>
         <a class="btn-ghost" href="#schedule">View the 2027 Concerts</a>
       </div>
       <div class="hero-localdl" id="heroLocalDl">Applications close 31 Jan 2027, 23:59 New York time.</div>
@@ -779,22 +781,7 @@ footer a:hover{color:var(--white)}
     </div>
   </div>
 
-  <!-- Key dates preview -->
-  <div class="section">
-    <div class="grid-2" style="align-items:start">
-      <div>
-        <div class="eyebrow">Key Dates</div>
-        <h2 class="section-title">The road to 2027</h2>
-        <p class="lede">Apply early: entries submitted during the early-bird
-        window enjoy a reduced fee of USD 130. The countdown at the top of
-        this page shows exactly how long remains.</p>
-        <div class="hero-ctas" style="margin-top:28px">
-          <a class="btn-gold" style="background:var(--navy);color:#fff" href="#schedule">Full Schedule</a>
-        </div>
-      </div>
-      <div class="timeline" id="homeTimeline"></div>
-    </div>
-  </div>
+  <!-- Key dates preview removed — full schedule lives on Schedule & Benefits -->
 </section>
 
 <!-- ============================================================ ABOUT -->
@@ -1009,7 +996,7 @@ footer a:hover{color:var(--white)}
 
   <div class="section" style="text-align:center">
     <h2 class="display" style="font-size:30px;margin-bottom:18px">Ready to be heard?</h2>
-    <a class="btn-gold js-apply" style="background:var(--navy);color:#fff" href="#apply">Start Your Application</a>
+    <a class="btn-gold js-apply" style="background:var(--navy);color:#fff" href="#home">Start Your Application</a>
   </div>
 </section>
 
@@ -1282,136 +1269,6 @@ footer a:hover{color:var(--white)}
   </div>
 </section>
 
-<!-- ============================================================ APPLY -->
-<section class="page" id="page-apply">
-  <div class="page-head">
-    <div class="section">
-      <div class="eyebrow on-dark">07 &middot; Apply Online</div>
-      <h1>Online Application</h1>
-      <p>Complete the form below and pay the entry fee by card. Your entry is
-      confirmed automatically with an application number by email.</p>
-    </div>
-  </div>
-  <div class="section">
-    <div class="localdl" id="applyLocalDl">
-      <span class="ld-ico">&#9096;</span>
-      <span>Loading your local deadline…</span>
-    </div>
-    <div class="apply-layout">
-
-      <!-- FORM — fields follow the official NYICC application form -->
-      <form class="form-card" onsubmit="return false">
-
-        <div class="form-section-title"><span class="no">1.</span>Personal Information</div>
-        <div class="f-row single">
-          <div class="field"><label>Full name <span class="req">*</span></label><input type="text" placeholder="As shown in your passport"></div>
-        </div>
-        <div class="f-row">
-          <div class="field"><label>Date of birth <span class="req">*</span></label><input type="date"></div>
-          <div class="field"><label>Nationality <span class="req">*</span></label><input type="text" placeholder="e.g., Republic of Korea"></div>
-        </div>
-        <div class="f-row">
-          <div class="field"><label>Gender (optional)</label>
-            <select><option value="">Prefer not to say</option><option>Female</option><option>Male</option><option>Other</option></select></div>
-          <div class="field"><label>Passport no. <span class="req">*</span></label><input type="text" placeholder="Passport or ID number"></div>
-        </div>
-        <div class="f-row">
-          <div class="field"><label>Email <span class="req">*</span></label><input type="email" placeholder="you@example.com"><div class="hint">Your application number and all official notices are sent here.</div></div>
-          <div class="field"><label>Mobile (with country code) <span class="req">*</span></label><input type="tel" placeholder="+1 212 000 0000"></div>
-        </div>
-        <div class="f-row single">
-          <div class="field"><label>Address <span class="req">*</span></label><input type="text" placeholder="Street address"></div>
-        </div>
-        <div class="f-row">
-          <div class="field"><label>City <span class="req">*</span></label><input type="text"></div>
-          <div class="field"><label>Country <span class="req">*</span></label><input type="text"></div>
-        </div>
-
-        <div class="form-section-title"><span class="no">2.</span>Competition Information</div>
-        <div class="f-row">
-          <div class="field"><label>Instrument / Voice <span class="req">*</span></label><input type="text" placeholder="e.g., Violin / Soprano"></div>
-          <div class="field"><label>Category <span class="req">*</span></label>
-            <select><option value="">Select a category</option><option>Piano</option><option>Violin</option><option>Flute</option><option>Cello</option><option>Vocal</option></select></div>
-        </div>
-        <div class="f-row">
-          <div class="field"><label>Age group</label><input type="text" placeholder="If applicable"><div class="hint">The competition has no age limit; complete only if instructed.</div></div>
-          <div class="field"><label>Teacher</label><input type="text" placeholder="Current or most recent teacher"></div>
-        </div>
-        <div class="f-row single">
-          <div class="field"><label>Music school / University</label><input type="text" placeholder="Institution name"></div>
-        </div>
-
-        <div class="form-section-title"><span class="no">3.</span>Performance Program</div>
-        <div class="f-row">
-          <div class="field"><label>Composer <span class="req">*</span></label><input type="text" placeholder="e.g., P. I. Tchaikovsky"></div>
-          <div class="field"><label>Work title <span class="req">*</span></label><input type="text" placeholder="e.g., Violin Concerto in D major, Op. 35"></div>
-        </div>
-        <div class="f-row">
-          <div class="field"><label>Movement</label><input type="text" placeholder="e.g., I. Allegro moderato"></div>
-          <div class="field"><label>Duration <span class="req">*</span></label><input type="text" placeholder="e.g., 19 minutes"></div>
-        </div>
-        <div class="f-row single">
-          <div class="field"><label>YouTube / Vimeo link <span class="req">*</span></label><input type="url" placeholder="https://youtu.be/…">
-            <div class="hint">One continuous, unedited take. Begin by stating your name, category, work and recording date on camera. Keep the link active until results are announced.</div></div>
-        </div>
-
-        <div class="form-section-title"><span class="no">4.</span>Submitted Documents</div>
-        <div class="f-row single">
-          <div class="field"><label>Biography (100&ndash;150 words) <span class="req">*</span></label><textarea rows="4" placeholder="In English, 100–150 words"></textarea></div>
-        </div>
-        <div class="f-row">
-          <div class="field"><label>Profile photo <span class="req">*</span></label><div class="upload-box">Click to upload &middot; JPG/PNG</div></div>
-          <div class="field"><label>Passport / ID copy <span class="req">*</span></label><div class="upload-box">Click to upload &middot; PDF/JPG</div></div>
-        </div>
-        <div class="f-row single">
-          <div class="field"><label>Proof of age (if required)</label><div class="upload-box">Click to upload &middot; PDF/JPG</div></div>
-        </div>
-        <div style="margin-bottom:6px">
-          <label class="doc-check"><input type="checkbox"> Performance video (link provided above)</label>
-          <label class="doc-check"><input type="checkbox"> Biography (100&ndash;150 words)</label>
-          <label class="doc-check"><input type="checkbox"> Profile photo</label>
-          <label class="doc-check"><input type="checkbox"> Passport / ID</label>
-          <label class="doc-check" style="border-bottom:none"><input type="checkbox" checked disabled> Proof of payment &mdash; recorded automatically after card payment</label>
-        </div>
-
-        <div class="form-section-title"><span class="no">5.</span>Declaration</div>
-        <label class="check-row"><input type="checkbox"> I certify that the information provided is true and accurate. <span class="req">*</span></label>
-        <label class="check-row"><input type="checkbox"> I agree to the competition regulations. <span class="req">*</span></label>
-        <label class="check-row"><input type="checkbox"> I agree to the use of my submitted materials for promotional purposes. <span class="req">*</span></label>
-
-        <div class="form-section-title"><span class="no">6.</span>Signature</div>
-        <div class="f-row">
-          <div class="field"><label>Applicant signature <span class="req">*</span></label><input type="text" placeholder="Type your full legal name"><div class="hint">Typing your name constitutes your electronic signature.</div></div>
-          <div class="field"><label>Date <span class="req">*</span></label><input type="date"></div>
-        </div>
-      </form>
-
-      <!-- PAYMENT — Stripe primary, PayPal secondary -->
-      <aside class="pay-card">
-        <div class="eyebrow on-dark">Entry Fee</div>
-        <h3>Payment</h3>
-        <div class="fee-line"><span id="feePhase">Application fee</span><span class="amt" id="feeAmount">USD 130</span></div>
-        <div class="fee-sub" id="feeSub">Early bird: USD 130 until 14 Dec 2026 &middot; Regular: USD 150 from 15 Dec 2026 to 31 Jan 2027.</div>
-        <div class="pay-brands">
-          <span>VISA</span><span>Mastercard</span><span>AMEX</span><span>JCB</span><span>UnionPay</span>
-        </div>
-        <p class="pay-note">Cards issued in any country are accepted. Prices
-        can be displayed in your local currency at checkout; payment is
-        processed securely via Stripe.
-        <br><br><em>Integration point &mdash; Stripe Checkout is mounted here at
-        launch. On success, the application number is issued and the entry is
-        registered automatically.</em></p>
-        <button class="submit-btn" onclick="alert('Demo site — in the live version this opens secure Stripe checkout, then issues your application number (e.g., 2026-0128) and sends a confirmation email: Payment — Completed.')">Pay &amp; Submit Application</button>
-        <div class="pay-alt">Prefer PayPal? A PayPal payment option is also
-        available at checkout.</div>
-        <p class="pay-note" style="margin-top:12px">After payment you receive
-        a confirmation email with your application number
-        (e.g., <em>Application No. 2026-0128 &middot; Payment: Completed</em>).</p>
-      </aside>
-    </div>
-  </div>
-</section>
-
 </main>
 
 <!-- ============================================================ FOOTER -->
@@ -1443,7 +1300,7 @@ footer a:hover{color:var(--white)}
       </div>
       <div>
         <h4>Contact</h4>
-        <a class="js-apply" href="#apply">Apply Online</a>
+        <a class="js-apply" href="#home">Apply Online</a>
         <a href="mailto:contact@nyicc.org">contact@nyicc.org</a>
         <a href="https://www.schwingungen.at" target="_blank" rel="noopener">IMK Vienna &middot; schwingungen.at</a>
         <a href="#">Instagram</a>
@@ -1452,7 +1309,9 @@ footer a:hover{color:var(--white)}
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 New York International Concerto Competition. All rights reserved.</span>
-      <span>Sponsored by IMK</span>
+      <span class="sponsor-imk">Sponsored by
+        <img src="data:image/png;base64,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" alt="IMK" class="imk-logo">
+      </span>
     </div>
   </div>
 </footer>
@@ -1530,14 +1389,21 @@ const CONFIG = {
 /* ============================================================
    JOTFORM — 접수 폼이 완성되면 아래 따옴표 안에 Jotform 링크를
    붙여넣으세요. 예: 'https://form.jotform.com/2510xxxxxxxxx'
-   비워두면 기존 안내용 접수 페이지(#apply)로 연결됩니다.
+   링크를 넣으면 모든 'Apply Online' 버튼이 바로 Jotform으로
+   연결됩니다(새 탭). 비워두면 임시 안내 알림이 뜹니다.
    ============================================================ */
-const JOTFORM_URL = '';
-if (JOTFORM_URL) {
-  document.querySelectorAll('.js-apply').forEach(a => {
+const JOTFORM_URL = 'https://form.jotform.com/262272742209052';
+document.querySelectorAll('.js-apply').forEach(a => {
+  if (JOTFORM_URL) {
     a.href = JOTFORM_URL; a.target = '_blank'; a.rel = 'noopener';
-  });
-}
+  } else {
+    a.href = '#home';
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      alert('The online application opens soon. Applications will be submitted through our secure form — please check back closer to the opening date.');
+    });
+  }
+});
 
 /* ============================================================
    D-day counter (switches to HH:MM:SS under 24h)
@@ -1631,7 +1497,6 @@ function renderTimeline(elId, limit){
       <p>${t.desc}</p>
     </div>`).join('');
 }
-renderTimeline('homeTimeline', 4);
 renderTimeline('fullTimeline');
 
 const juryGrid = document.getElementById('juryGrid');
@@ -1652,9 +1517,9 @@ juryGrid.innerHTML = CONFIG.jury.map(j => `
 /* ============================================================
    Hash routing — native browser back/forward supported
    Routes: #home  #about[/tab]  #guide  #schedule  #jury
-           #media[/tab]  #winners[/tab]  #apply
+           #media[/tab]  #winners[/tab]
    ============================================================ */
-const PAGES = ['home','about','guide','schedule','venues','jury','media','winners','apply'];
+const PAGES = ['home','about','guide','schedule','venues','jury','media','winners'];
 const DEFAULT_TABS = { about:'greeting', media:'vod', winners:'laureates' };
 
 function route(){
