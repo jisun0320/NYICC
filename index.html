@@ -1433,9 +1433,11 @@ tickDday(); setInterval(tickDday, 1000);
 (function(){
   const now = new Date();
   const early = now <= CONFIG.earlyBirdEnd;
-  document.getElementById('feePhase').textContent =
+  const phase = document.getElementById('feePhase');
+  const amount = document.getElementById('feeAmount');
+  if (phase) phase.textContent =
     early ? 'Application fee — Early Bird' : 'Application fee — Regular';
-  document.getElementById('feeAmount').textContent =
+  if (amount) amount.textContent =
     'USD ' + (early ? CONFIG.feeEarly : CONFIG.feeRegular);
 })();
 
