@@ -54,6 +54,7 @@ button{font-family:inherit;cursor:pointer}
 .eyebrow.on-dark{color:var(--brass-soft)}
 h1,h2,h3,.display{font-family:var(--font-display);font-weight:500;line-height:1.15}
 .section-title{font-size:clamp(30px,4vw,44px);margin:14px 0 22px}
+.hiw-title{font-size:clamp(24px,2.9vw,38px);line-height:1.28}
 .lede{font-size:18px;color:var(--ink-soft);max-width:720px}
 
 /* ============================================================
@@ -568,10 +569,10 @@ footer a:hover{color:var(--white)}
 .logo-marquee:hover .logo-track{animation-play-state:paused}
 .logo-item{flex:0 0 auto;display:flex;align-items:center;justify-content:center}
 .logo-item img{
-  height:46px;width:auto;object-fit:contain;
-  filter:grayscale(100%);opacity:.72;transition:filter .3s,opacity .3s;
+  height:48px;width:auto;object-fit:contain;
+  opacity:.92;transition:opacity .3s,transform .3s;
 }
-.logo-item img:hover{filter:grayscale(0%);opacity:1}
+.logo-item img:hover{opacity:1;transform:scale(1.06)}
 @keyframes logoscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.logo-track{animation:none;flex-wrap:wrap;justify-content:center;gap:36px}}
 @media (max-width:700px){.logo-wall{grid-template-columns:1fr}}
@@ -804,7 +805,7 @@ footer a:hover{color:var(--white)}
   <div class="band band-firstband">
     <div class="section">
       <div class="eyebrow">Concerto Competition in New York &amp; Winners’ Concerts in Europe</div>
-      <h2 class="section-title">The competition in New York, the winners’ performances in Europe.<br>Connecting the USA and Europe.</h2>
+      <h2 class="section-title hiw-title">The competition in New York, the winners’ performances in Europe.<br>Connecting the USA and Europe.</h2>
       <div class="grid-3">
         <div class="card">
           <h3>1 &middot; Apply &amp; Submit Online</h3>
@@ -924,42 +925,62 @@ footer a:hover{color:var(--white)}
       <h2 class="display" style="font-size:34px;margin-bottom:8px">IMK &mdash; Verein f&uuml;r Internationale Musik- und Kulturf&ouml;rderung</h2>
       <p class="lede" style="margin-bottom:14px">The promise of a real orchestral
       debut only means something if the organization behind it can deliver. NYICC
-      is sponsored by IMK Vienna &mdash; an organization with a 20-year record of
-      putting international artists on the world&rsquo;s most demanding stages.</p>
+      is sponsored by IMK Vienna &mdash; founded in <strong>1991</strong> and, over
+      more than three decades, one of Europe&rsquo;s most active classical concert
+      organizations, putting international artists on many of the world&rsquo;s
+      great stages.</p>
       <a class="orch-link" href="https://www.schwingungen.at" target="_blank" rel="noopener" style="margin-bottom:38px">www.schwingungen.at &#8599;</a>
 
       <div class="grid-3" style="margin-top:36px">
         <div class="card">
-          <h3>20 years</h3>
-          <p>Since 2006, IMK&rsquo;s <em>Schwingungen</em> Concert Series has
-          presented international orchestras at the Musikverein Golden Hall in
-          Vienna, inviting 3&ndash;4 orchestras each year.</p>
+          <h3>Since 1991</h3>
+          <p>IMK was founded in Vienna in 1991 to build bridges across cultures
+          and generations through music &mdash; more than three decades of work.</p>
         </div>
         <div class="card">
-          <h3>57+ concerts</h3>
-          <p>Over two decades the series has grown to more than 57 concerts at
-          one of the most challenging halls in the world to program.</p>
+          <h3>200+ concerts a year</h3>
+          <p>Today IMK organizes over 200 concerts each year in nearly 30 cities
+          worldwide, performed by musicians of many cultures and backgrounds.</p>
         </div>
         <div class="card">
           <h3>Worldwide reach</h3>
-          <p>IMK has the experience and capability to collaborate with orchestras
-          anywhere in the world, and to arrange debut performances for conductors
-          and soloists.</p>
+          <p>As a professional classical concert management agency, IMK partners
+          with music universities around the world, including mdw Vienna and
+          K&#8217;ARTS Seoul.</p>
         </div>
       </div>
 
       <div style="margin-top:48px;max-width:820px">
+        <div class="eyebrow" style="margin-bottom:12px">Founded in 1991 &mdash; a mission across cultures</div>
+        <h3 class="display" style="font-size:26px;margin-bottom:12px">Building bridges through music</h3>
+        <p style="color:var(--ink-soft);margin-bottom:14px">IMK was founded in 1991
+        with a clear goal: <em>to build bridges and overcome the seeming contrasts
+        between young and old, East and West, and tradition and modernization.</em>
+        In a world where people increasingly group themselves into narrow
+        identities, IMK returns to the one trait everyone shares &mdash; that we are
+        all human &mdash; and holds that music is the best way to make that unity
+        real.</p>
+        <p style="color:var(--ink-soft)">Music is a global language: an art form
+        that carries emotion and expression across any border, understood by anyone
+        willing to listen. That conviction has guided IMK for more than thirty
+        years, and today shapes its work with solo artists and universities under
+        Artistic Director <strong>Meehae Ryo</strong>.</p>
+      </div>
+
+      <div style="margin-top:44px;max-width:820px">
         <div class="eyebrow" style="margin-bottom:12px">The Musikverein Golden Hall</div>
-        <h3 class="display" style="font-size:26px;margin-bottom:12px">Great concerts, organized by IMK since 2006</h3>
-        <p style="color:var(--ink-soft);margin-bottom:14px">IMK proudly stands as
-        one of the few organizations in Vienna to have continuously developed and
-        programmed concerts at the Musikverein Golden Hall &mdash; the home of the
-        annual Vienna New Year&rsquo;s Concert &mdash; over so many years. Its
-        <em>Schwingungen</em> series launched there in 2006 and has run ever
-        since.</p>
-        <p style="color:var(--ink-soft)">For orchestras that have never performed
-        at the Golden Hall, or those wishing to return, IMK creates that
-        opportunity together with its team.</p>
+        <h3 class="display" style="font-size:26px;margin-bottom:12px">A flagship series since 2006</h3>
+        <p style="color:var(--ink-soft);margin-bottom:14px">Among its many activities,
+        IMK launched the <em>Schwingungen</em> Concert Series at the Musikverein
+        Golden Hall in Vienna in 2006, inviting 3&ndash;4 international orchestras
+        each year. Over the past two decades the series has grown to more than 57
+        concerts &mdash; making IMK one of the few organizations to program
+        continuously at the home of the Vienna New Year&rsquo;s Concert.</p>
+        <p style="color:var(--ink-soft)">The Golden Hall series is only one part of
+        IMK&rsquo;s work: the organization presents concerts in many of
+        Europe&rsquo;s leading halls (see below), and for orchestras wishing to
+        debut at the Golden Hall or return to it, IMK creates that opportunity
+        together with its team.</p>
       </div>
 
       <div style="margin-top:44px">
@@ -1390,9 +1411,9 @@ footer a:hover{color:var(--white)}
       Vienna, Prague and Eisenstadt will be published here after each concert.</p>
       <div class="empty">
         <div class="display">Concert videos &amp; photos &mdash; coming in 2027.</div>
-        <p>After each concert, a video record of the winner&rsquo;s performance is
-        provided for their own reference, and official photographs will appear
-        here following the 2027 concerts.</p>
+        <p>After each concert, the winner is provided with a video of the
+        performance for their own reference, and official photographs will
+        appear here following the 2027 concerts.</p>
       </div>
     </div>
   </div>
