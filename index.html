@@ -154,7 +154,7 @@ nav.main-nav{display:flex;align-items:center;gap:2px;margin-left:auto}
 .venue-bg.v2{background:radial-gradient(ellipse at 70% 25%, #3b2f52 0%, #171226 55%, #0c0917 100%)}   /* ORF TV Hall Vienna */
 .venue-bg.v3{background:radial-gradient(ellipse at 50% 15%, #4a3320 0%, #211508 55%, #120b04 100%)}   /* Smetana Hall Prague */
 .venue-bg.v4{background:radial-gradient(ellipse at 25% 30%, #52381c 0%, #241708 55%, #130c04 100%)}   /* Smetana Hall Prague */
-.venue-bg.v5{background:radial-gradient(ellipse at 65% 20%, #4d1f28 0%, #200d12 55%, #120609 100%)}   /* Ehrbar Hall Vienna */
+.venue-bg.v5{background:radial-gradient(ellipse at 65% 20%, #4d1f28 0%, #200d12 55%, #120609 100%)}   /* Haydn Hall Eisenstadt */
 .venue-bg::after{
   content:"";position:absolute;inset:0;
   background:
@@ -174,9 +174,10 @@ nav.main-nav{display:flex;align-items:center;gap:2px;margin-left:auto}
 .hero-kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--brass-soft);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .hero h1{
-  font-size:clamp(36px,5.6vw,68px);font-weight:500;max-width:920px;
+  font-size:clamp(30px,4.4vw,52px);font-weight:500;max-width:1000px;
   letter-spacing:-.01em;margin-bottom:18px;
-  text-shadow:0 2px 24px rgba(10,17,32,.55);
+  color:var(--brass-soft);
+  text-shadow:0 2px 24px rgba(10,17,32,.7);
 }
 .hero h1 em{font-style:italic;color:var(--brass-soft)}
 .hero .hero-sub{font-size:clamp(15px,1.7vw,18.5px);color:rgba(255,255,255,.9);max-width:680px;font-weight:300;text-shadow:0 1px 12px rgba(10,17,32,.65)}
@@ -258,6 +259,7 @@ main{min-height:60vh}
 #page-home.active{padding-top:0}
 .section{max-width:var(--maxw);margin:0 auto;padding:84px 28px}
 .band{background:var(--paper)}
+.band-firstband .section{padding-top:104px}
 .band-dark{background:var(--navy);color:var(--white)}
 .band-dark .lede{color:rgba(255,255,255,.78)}
 .page-head{
@@ -539,6 +541,10 @@ footer a{display:block;font-size:13.5px;padding:4px 0;color:rgba(255,255,255,.7)
 footer a:hover{color:var(--white)}
 .footer-brand .display{font-size:24px;color:var(--white)}
 .footer-brand p{font-size:13px;margin-top:10px;max-width:320px;line-height:1.7}
+.social-row{display:flex;gap:12px;margin-top:10px}
+.social-ic{width:38px;height:38px;border:1px solid rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.75);transition:border-color .2s,color .2s,background .2s;padding:0}
+.social-ic:hover{color:var(--brass-soft);border-color:var(--brass-soft);background:rgba(199,169,111,.1)}
+.social-ic svg{width:19px;height:19px}
 .footer-bottom{display:flex;justify-content:space-between;padding-top:24px;font-size:12px;color:rgba(255,255,255,.4);flex-wrap:wrap;gap:10px}
 .sponsor-imk{display:inline-flex;align-items:center;gap:10px}
 .imk-logo{height:34px;width:auto;display:block}
@@ -549,6 +555,25 @@ footer a:hover{color:var(--white)}
   border-left:2px solid var(--brass);padding-left:12px;margin-top:26px;
 }
 .logo-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+/* Auto-scrolling partner logo marquee */
+.logo-marquee{
+  overflow:hidden;position:relative;padding:22px 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+}
+.logo-track{
+  display:flex;align-items:center;gap:64px;width:max-content;
+  animation:logoscroll 32s linear infinite;
+}
+.logo-marquee:hover .logo-track{animation-play-state:paused}
+.logo-item{flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+.logo-item img{
+  height:46px;width:auto;object-fit:contain;
+  filter:grayscale(100%);opacity:.72;transition:filter .3s,opacity .3s;
+}
+.logo-item img:hover{filter:grayscale(0%);opacity:1}
+@keyframes logoscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.logo-track{animation:none;flex-wrap:wrap;justify-content:center;gap:36px}}
 @media (max-width:700px){.logo-wall{grid-template-columns:1fr}}
 .logo-slot{
   border:1px solid var(--hairline);background:var(--white);min-height:88px;
@@ -597,7 +622,7 @@ footer a:hover{color:var(--white)}
 .venue-block:nth-child(even) .venue-photo{order:2}
 @media (max-width:820px){.venue-block,.venue-block:nth-child(even){grid-template-columns:1fr}.venue-block:nth-child(even) .venue-photo{order:0}}
 .venue-photo{
-  min-height:280px;background-size:cover;background-position:center;position:relative;
+  min-height:360px;background-size:cover;background-position:center;position:relative;
   display:flex;align-items:flex-end;color:#fff;
 }
 .venue-photo .vph-label{
@@ -641,6 +666,8 @@ footer a:hover{color:var(--white)}
 .orch-card .ocity{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
 .orch-card h3{font-size:23px;margin:5px 0 10px}
 .orch-card p{font-size:13.5px;color:var(--ink-soft)}
+.orch-link{display:inline-block;margin-top:14px;font-size:12px;letter-spacing:.06em;color:var(--brass);border-bottom:1px solid var(--hairline);padding-bottom:2px;transition:border-color .2s,color .2s}
+.orch-link:hover{color:var(--ink);border-color:var(--brass)}
 </style>
 </head>
 <body>
@@ -649,7 +676,7 @@ footer a:hover{color:var(--white)}
 <header>
   <div class="header-inner">
     <a class="brand" href="#home" aria-label="NYICC — New York International Concerto Competition home">
-      <img class="logo-mark" src="nyicc-mark.png" alt="NYICC logo">
+      <img class="logo-mark" src="nyicc-mark-gold.png" alt="NYICC logo">
       <span class="brand-name">
         <span class="full">New York International<br>Concerto Competition</span>
       </span>
@@ -661,7 +688,8 @@ footer a:hover{color:var(--white)}
       <div class="nav-item"><a class="nav-link" data-route="about" href="#about">About</a>
         <div class="dropdown">
           <a href="#about/greeting">Greeting &amp; Mission</a>
-          <a href="#about/organization">Organization &amp; Partners</a>
+          <a href="#about/organization">Organization</a>
+          <a href="#about/partners">Partners</a>
         </div>
       </div>
       <div class="nav-item"><a class="nav-link" data-route="guide" href="#guide">Application Guide</a></div>
@@ -691,7 +719,7 @@ footer a:hover{color:var(--white)}
 
   <!-- HERO : five confirmed 2027 concerts, carousel of the halls -->
   <div class="hero" id="hero">
-    <!-- Hall photography: Tonhalle, ORF TV Hall, Smetana Hall, Ehrbar Hall -->
+    <!-- Hall photography: Tonhalle, ORF TV Hall, Smetana Hall, Haydn Hall -->
     <div class="hero-slide active">
       <div class="venue-bg" style="background-image:url('hall-tonhalle.jpg')"></div>
       <div class="venue-tag">
@@ -733,11 +761,11 @@ footer a:hover{color:var(--white)}
       </div>
     </div>
     <div class="hero-slide">
-      <div class="venue-bg" style="background-image:url('hall-ehrbar.jpg')"></div>
+      <div class="venue-bg" style="background-image:url('hall-haydn.jpg')"></div>
       <div class="venue-tag">
         <div class="num">Flute Winner &middot; Concert V</div>
-        <div class="name">Ehrbar Hall</div>
-        <div class="date">29 May 2027 &middot; Vienna, Austria</div>
+        <div class="name">Haydn Hall</div>
+        <div class="date">19 June 2027 &middot; Eisenstadt, Austria</div>
         <div class="orch">with the Bohuslav Martin&#367; Philharmonic Orchestra</div>
         <div class="work">C.P.E. Bach &mdash; Flute Concerto in A minor, Wq. 166</div>
       </div>
@@ -766,14 +794,14 @@ footer a:hover{color:var(--white)}
         <button class="hero-dot" data-slide="1"><span class="roman">II</span><span class="txt">Violin &middot; Vienna</span></button>
         <button class="hero-dot" data-slide="2"><span class="roman">III</span><span class="txt">Vocal &middot; Prague</span></button>
         <button class="hero-dot" data-slide="3"><span class="roman">IV</span><span class="txt">Piano &middot; Prague</span></button>
-        <button class="hero-dot" data-slide="4"><span class="roman">V</span><span class="txt">Flute &middot; Vienna</span></button>
+        <button class="hero-dot" data-slide="4"><span class="roman">V</span><span class="txt">Flute &middot; Eisenstadt</span></button>
         <button class="hero-arrow" id="heroNext" aria-label="Next concert">&#8594;</button>
       </div>
     </div>
   </div>
 
   <!-- How it works -->
-  <div class="band">
+  <div class="band band-firstband">
     <div class="section">
       <div class="eyebrow">Concerto Competition in New York &amp; Winners’ Concerts in Europe</div>
       <h2 class="section-title">The competition in New York, the winners’ performances in Europe.<br>Connecting the USA and Europe.</h2>
@@ -798,11 +826,14 @@ footer a:hover{color:var(--white)}
         <div class="card">
           <h3>3 &middot; Winners Perform in Europe in 2027</h3>
           <p>The winner of each category will be invited to perform with a
-          professional orchestra at a confirmed concert in <strong>Zurich,
-          Vienna, or Prague</strong>.</p>
-          <p style="margin-top:10px">Winners will receive <strong>airfare
-          support, hotel accommodation, and a professionally recorded live
-          concert video</strong> to take home.</p>
+          professional orchestra at a confirmed 2027 concert in <strong>Zurich,
+          Vienna, Prague or Eisenstadt</strong>.</p>
+          <p style="margin-top:10px">Each winner receives <strong>airfare
+          support</strong> (USD 500 within Europe / USD 1,000 from outside
+          Europe), a <strong>4-star hotel for 5 days / 4 nights with
+          breakfast</strong>, and <strong>airport pickup</strong> in the concert
+          city. After the concert, the winner is also provided with a
+          <strong>video of the performance for their own reference</strong>.</p>
         </div>
       </div>
     </div>
@@ -835,7 +866,8 @@ footer a:hover{color:var(--white)}
   <div class="section">
     <div class="tabs" role="tablist">
       <button class="tab-btn" data-tab="greeting" data-page="about">Greeting &amp; Mission</button>
-      <button class="tab-btn" data-tab="organization" data-page="about">Organization &amp; Partners</button>
+      <button class="tab-btn" data-tab="organization" data-page="about">Organization</button>
+      <button class="tab-btn" data-tab="partners" data-page="about">Partners</button>
     </div>
 
     <div class="tab-panel" id="about-greeting">
@@ -880,15 +912,101 @@ footer a:hover{color:var(--white)}
       <p class="lede" style="margin-bottom:34px">NYICC is officially sponsored by
       IMK Vienna, whose extensive European orchestra network makes the 2027
       Winners&rsquo; Concert Series possible.</p>
-      <table class="rule-table" style="margin-bottom:48px">
+      <table class="rule-table" style="margin-bottom:24px">
         <tr><td>Presented by</td><td>New York International Concerto Competition (NYICC)</td></tr>
-        <tr><td>Sponsored by</td><td>IMK</td></tr>
-        <tr><td>Official Partner</td><td>IMK &mdash; Verein f&uuml;r Internationale Musik und Kulturf&ouml;rderung, Vienna &middot; <a href="https://www.schwingungen.at" target="_blank" rel="noopener" style="color:var(--brass)">www.schwingungen.at</a></td></tr>
-        <tr><td>Partner Orchestras</td><td>Sofia Philharmonic Orchestra &middot; Bohuslav Martin&#367; Philharmonic Orchestra &middot; North Czech Philharmonic Orchestra</td></tr>
-        <tr><td>Concert Venues</td><td>Tonhalle Zurich &middot; ORF TV Hall Vienna &middot; Ehrbar Hall Vienna &middot; Smetana Hall Prague</td></tr>
-        <tr><td>Official Language</td><td>English</td></tr>
       </table>
-      
+      <p class="divider-note">The organizing committee, partner institutions and
+      jury will be published here as they are confirmed.</p>
+    </div>
+
+    <div class="tab-panel" id="about-partners">
+      <div class="eyebrow" style="margin-bottom:10px">Our Sponsor &amp; Official Partner</div>
+      <h2 class="display" style="font-size:34px;margin-bottom:8px">IMK &mdash; Verein f&uuml;r Internationale Musik- und Kulturf&ouml;rderung</h2>
+      <p class="lede" style="margin-bottom:14px">The promise of a real orchestral
+      debut only means something if the organization behind it can deliver. NYICC
+      is sponsored by IMK Vienna &mdash; an organization with a 20-year record of
+      putting international artists on the world&rsquo;s most demanding stages.</p>
+      <a class="orch-link" href="https://www.schwingungen.at" target="_blank" rel="noopener" style="margin-bottom:38px">www.schwingungen.at &#8599;</a>
+
+      <div class="grid-3" style="margin-top:36px">
+        <div class="card">
+          <h3>20 years</h3>
+          <p>Since 2006, IMK&rsquo;s <em>Schwingungen</em> Concert Series has
+          presented international orchestras at the Musikverein Golden Hall in
+          Vienna, inviting 3&ndash;4 orchestras each year.</p>
+        </div>
+        <div class="card">
+          <h3>57+ concerts</h3>
+          <p>Over two decades the series has grown to more than 57 concerts at
+          one of the most challenging halls in the world to program.</p>
+        </div>
+        <div class="card">
+          <h3>Worldwide reach</h3>
+          <p>IMK has the experience and capability to collaborate with orchestras
+          anywhere in the world, and to arrange debut performances for conductors
+          and soloists.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:48px;max-width:820px">
+        <div class="eyebrow" style="margin-bottom:12px">The Musikverein Golden Hall</div>
+        <h3 class="display" style="font-size:26px;margin-bottom:12px">Great concerts, organized by IMK since 2006</h3>
+        <p style="color:var(--ink-soft);margin-bottom:14px">IMK proudly stands as
+        one of the few organizations in Vienna to have continuously developed and
+        programmed concerts at the Musikverein Golden Hall &mdash; the home of the
+        annual Vienna New Year&rsquo;s Concert &mdash; over so many years. Its
+        <em>Schwingungen</em> series launched there in 2006 and has run ever
+        since.</p>
+        <p style="color:var(--ink-soft)">For orchestras that have never performed
+        at the Golden Hall, or those wishing to return, IMK creates that
+        opportunity together with its team.</p>
+      </div>
+
+      <div style="margin-top:44px">
+        <div class="eyebrow" style="margin-bottom:14px">University Partnerships &mdash; the Scholarship Orchestra Project</div>
+        <p style="color:var(--ink-soft);max-width:820px;margin-bottom:22px">Driven
+        by a mission to connect music education directly with the stage, IMK
+        pursues its Scholarship Orchestra project in partnership with leading
+        institutions:</p>
+        <div class="logo-marquee">
+          <div class="logo-track">
+            <div class="logo-item"><img src="logo-mdw.png" alt="University of Music and Performing Arts Vienna" loading="lazy"></div><div class="logo-item"><img src="logo-kronberg.png" alt="Kronberg Academy" loading="lazy"></div><div class="logo-item"><img src="logo-manhattan.png" alt="Manhattan School of Music" loading="lazy"></div><div class="logo-item"><img src="logo-gustavmahler.png" alt="Gustav Mahler Private University for Music" loading="lazy"></div><div class="logo-item"><img src="logo-karts.png" alt="Korea National University of Arts (K’ARTS)" loading="lazy"></div>
+            <div class="logo-item"><img src="logo-mdw.png" alt="University of Music and Performing Arts Vienna" loading="lazy"></div><div class="logo-item"><img src="logo-kronberg.png" alt="Kronberg Academy" loading="lazy"></div><div class="logo-item"><img src="logo-manhattan.png" alt="Manhattan School of Music" loading="lazy"></div><div class="logo-item"><img src="logo-gustavmahler.png" alt="Gustav Mahler Private University for Music" loading="lazy"></div><div class="logo-item"><img src="logo-karts.png" alt="Korea National University of Arts (K’ARTS)" loading="lazy"></div>
+          </div>
+        </div>
+        <p class="divider-note" style="margin-top:8px">and more institutions to come.</p>
+      </div>
+
+      <div style="margin-top:44px">
+        <div class="eyebrow" style="margin-bottom:14px">Halls Regularly Used by IMK</div>
+        <p style="color:var(--ink-soft);max-width:820px;margin-bottom:22px">Beyond
+        the 2027 NYICC venues, IMK regularly programs concerts in many of
+        Europe&rsquo;s most prestigious halls, including:</p>
+        <table class="rule-table" style="max-width:820px">
+          <tr><td>Vienna, Austria</td><td>Golden Hall, Musikverein &middot; 1,744 seats &mdash; home of the Vienna New Year&rsquo;s Concert</td></tr>
+          <tr><td>Salzburg, Austria</td><td>Great Hall, Mozarteum &middot; ~800 seats, a Salzburg Festival venue</td></tr>
+          <tr><td>Graz, Austria</td><td>Musikverein Graz, Stefaniesaal &middot; ~1,100 seats</td></tr>
+          <tr><td>Eisenstadt, Austria</td><td>Haydn Hall &middot; Baroque frescoes, renowned acoustics</td></tr>
+          <tr><td>Prague, Czech Republic</td><td>Dvo&#345;&aacute;k Hall (1,148 seats) &middot; Smetana Hall (1,259 seats)</td></tr>
+          <tr><td>Budapest, Hungary</td><td>Liszt Hall, Liszt Academy of Music &middot; ~900 seats</td></tr>
+          <tr><td>Berlin, Germany</td><td>Berlin Philharmonic Hall &middot; 2,250 seats</td></tr>
+          <tr><td>Amsterdam, Netherlands</td><td>Concertgebouw &middot; acoustics comparable to the Musikverein</td></tr>
+          <tr><td>Zurich, Switzerland</td><td>Tonhalle &middot; 1,455 seats, inaugurated 1895 by Johannes Brahms</td></tr>
+          <tr><td>Sofia, Bulgaria</td><td>Bulgaria Concert Hall &middot; home of the Sofia Philharmonic</td></tr>
+        </table>
+      </div>
+
+      <div style="margin-top:44px;max-width:820px">
+        <div class="eyebrow" style="margin-bottom:12px">Recordings</div>
+        <p style="color:var(--ink-soft)">IMK-associated artists have released
+        recordings on labels including Deutsche Grammophon, Sony Classical and EMI
+        Classics &mdash; a further mark of the professional level at which IMK
+        operates.</p>
+      </div>
+
+      <p class="divider-note" style="margin-top:36px">Summarized from the official
+      IMK / Schwingungen materials. Partner logos and further detail to be added.
+      Source: <a href="https://www.schwingungen.at" target="_blank" rel="noopener" style="color:var(--brass)">www.schwingungen.at</a></p>
     </div>
   </div>
 </section>
@@ -928,12 +1046,12 @@ footer a:hover{color:var(--white)}
         <div class="fee-card early">
           <div class="fee-badge">Early Bird</div>
           <div class="fee-window">15 Oct &ndash; 14 Dec 2026</div>
-          <div class="fee-amt">$130<small> USD</small></div>
+          <div class="fee-amt">$150<small> USD</small></div>
           <p>Reduced fee for entries submitted during the early-bird window.</p>
         </div>
         <div class="fee-card">
           <div class="fee-window">15 Dec 2026 &ndash; 31 Jan 2027</div>
-          <div class="fee-amt">$150<small> USD</small></div>
+          <div class="fee-amt">$200<small> USD</small></div>
           <p>Regular fee for entries submitted until the final deadline.</p>
         </div>
       </div>
@@ -995,7 +1113,7 @@ footer a:hover{color:var(--white)}
         <h3><span class="art">Article 7</span>Prizes</h3>
         <ul>
           <li>The First Prize winner of each category performs a concerto with orchestra at a confirmed 2027 concert (see Schedule &amp; Benefits), and receives an official certificate.</li>
-          <li>Winner support includes airport pickup at the concert city, hotel accommodation, partial airfare support, and a live video recording of the concert for the winner&rsquo;s use.</li>
+          <li>Winner support includes airfare support (USD 500 within Europe / USD 1,000 from outside Europe), a 4-star hotel for 5 days / 4 nights with breakfast, airport pickup in the concert city, and a video record of the concert for the winner&rsquo;s own reference.</li>
         </ul>
       </div>
       <div class="reg-article">
@@ -1075,7 +1193,7 @@ footer a:hover{color:var(--white)}
           <li><strong>Airfare support</strong> &mdash; USD 500 for winners residing in Europe, USD 1,000 for winners residing outside Europe.</li>
           <li><strong>Hotel accommodation</strong> &mdash; 4-star hotel, 5 days / 4 nights, breakfast included.</li>
           <li><strong>Airport pickup</strong> at the concert city.</li>
-          <li><strong>Live concert video</strong> &mdash; a professional recording of the performance, provided to the winner for reference and promotion.</li>
+          <li><strong>Concert video</strong> &mdash; after the performance, a video record of the concert is provided to the winner for their own reference.</li>
           <li><strong>Repertoire flexibility</strong> &mdash; the concerto may be changed by mutual agreement with the organizers.</li>
         </ul>
       </div>
@@ -1122,7 +1240,7 @@ footer a:hover{color:var(--white)}
 
     <div class="venue-block">
       <div class="venue-photo vcarousel" data-hall="orf">
-        <div class="vc-slide active" style="background-image:url('hall-orf.jpg')"></div><div class="vc-slide" style="background-image:url('g-orf-1.jpg')"></div>
+        <div class="vc-slide active" style="background-image:url('hall-orf.jpg')"></div><div class="vc-slide" style="background-image:url('g-orf-1.jpg');background-position:center 60%"></div>
         <span class="vph-label">ORF TV Hall &middot; Vienna</span>
         <button class="vc-arrow vc-prev" aria-label="Previous photo">&#8249;</button>
         <button class="vc-arrow vc-next" aria-label="Next photo">&#8250;</button>
@@ -1141,7 +1259,7 @@ footer a:hover{color:var(--white)}
 
     <div class="venue-block">
       <div class="venue-photo vcarousel" data-hall="smetana">
-        <div class="vc-slide active" style="background-image:url('hall-smetana.jpg')"></div><div class="vc-slide" style="background-image:url('g-smetana-1.jpg')"></div><div class="vc-slide" style="background-image:url('g-smetana-2.jpg')"></div><div class="vc-slide" style="background-image:url('g-smetana-3.jpg')"></div>
+        <div class="vc-slide active" style="background-image:url('hall-smetana.jpg')"></div><div class="vc-slide" style="background-image:url('g-smetana-1.jpg');background-position:center 62%"></div><div class="vc-slide" style="background-image:url('g-smetana-2.jpg');background-position:center 70%"></div><div class="vc-slide" style="background-image:url('g-smetana-3.jpg');background-position:center 58%"></div>
         <span class="vph-label">Smetana Hall &middot; Prague</span>
         <button class="vc-arrow vc-prev" aria-label="Previous photo">&#8249;</button>
         <button class="vc-arrow vc-next" aria-label="Next photo">&#8250;</button>
@@ -1159,20 +1277,22 @@ footer a:hover{color:var(--white)}
     </div>
 
     <div class="venue-block">
-      <div class="venue-photo vcarousel" data-hall="ehrbar">
-        <div class="vc-slide active" style="background-image:url('hall-ehrbar.jpg')"></div><div class="vc-slide" style="background-image:url('g-ehrbar-1.jpg')"></div><div class="vc-slide" style="background-image:url('g-ehrbar-2.jpg')"></div>
-        <span class="vph-label">Ehrbar Hall &middot; Vienna</span>
+      <div class="venue-photo vcarousel" data-hall="haydn">
+        <div class="vc-slide active" style="background-image:url('hall-haydn.jpg')"></div><div class="vc-slide" style="background-image:url('g-haydn-1.jpg');background-position:center 40%"></div><div class="vc-slide" style="background-image:url('g-haydn-2.jpg');background-position:center 42%"></div><div class="vc-slide" style="background-image:url('g-haydn-3.jpg')"></div>
+        <span class="vph-label">Haydn Hall &middot; Eisenstadt</span>
         <button class="vc-arrow vc-prev" aria-label="Previous photo">&#8249;</button>
         <button class="vc-arrow vc-next" aria-label="Next photo">&#8250;</button>
         <div class="vc-dots"><button class="vc-dot active" data-i="0" aria-label="Photo 1"></button><button class="vc-dot" data-i="1" aria-label="Photo 2"></button><button class="vc-dot" data-i="2" aria-label="Photo 3"></button></div>
       </div>
       <div class="venue-info">
-        <div class="vcity">Vienna, Austria</div>
-        <h3>Ehrbar Hall</h3>
-        <div class="vmeta">Flute Winner &middot; 29 May 2027</div>
-        <p>A historic Viennese hall with a distinguished concert legacy,
-        intimate in scale and rich in atmosphere &mdash; the stage for the NYICC
-        flute winner with the Bohuslav Martin&#367; Philharmonic Orchestra.</p>
+        <div class="vcity">Eisenstadt, Austria</div>
+        <h3>Haydn Hall</h3>
+        <div class="vmeta">Flute Winner &middot; 19 June 2027</div>
+        <p>Named after the composer who worked here, the Haydn Hall in Schloss
+        Esterh&aacute;zy &mdash; with its Baroque frescoes and celebrated acoustics
+        &mdash; is one of the world&rsquo;s most beautiful concert halls, hosting over
+        a hundred concerts each year. It is the stage for the NYICC flute winner
+        with the Bohuslav Martin&#367; Philharmonic Orchestra.</p>
       </div>
     </div>
     <p class="divider-note">Concert photography from each hall &mdash; use the arrows to browse. Winner performance photos will be added here after the 2027 concerts.</p>
@@ -1189,6 +1309,7 @@ footer a:hover{color:var(--white)}
           <p>One of Bulgaria&rsquo;s foremost symphony orchestras, with a long
           international touring and recording history. Partners the cello
           concert in Zurich.</p>
+          <a class="orch-link" href="https://sofiaphilharmonic.com/en/ensembles/sofia-philharmonic-orchestra/" target="_blank" rel="noopener">Official website &#8599;</a>
         </div>
         <div class="orch-card">
           <div class="ocity">Czech Republic</div>
@@ -1196,6 +1317,7 @@ footer a:hover{color:var(--white)}
           <p>A respected Czech orchestra named for the great 20th-century
           composer, active across Europe&rsquo;s concert stages. Partners the
           violin and flute concerts in Vienna.</p>
+          <a class="orch-link" href="https://www.filharmonie-zlin.cz/en/" target="_blank" rel="noopener">Official website &#8599;</a>
         </div>
         <div class="orch-card">
           <div class="ocity">Czech Republic</div>
@@ -1203,6 +1325,7 @@ footer a:hover{color:var(--white)}
           <p>An established regional philharmonic with a broad symphonic and
           operatic repertoire. Partners the vocal and piano concerts in
           Prague.</p>
+          <a class="orch-link" href="https://www.severoceskafilharmonie.cz/en/" target="_blank" rel="noopener">Official website &#8599;</a>
         </div>
       </div>
       <p class="divider-note">Orchestra profiles are summaries for placement;
@@ -1264,12 +1387,12 @@ footer a:hover{color:var(--white)}
     <div class="tab-panel" id="winners-media">
       <p class="lede" style="margin-bottom:30px">Performance videos and
       official photographs from the 2027 Winners&rsquo; Concert Series in Zurich,
-      Vienna and Prague will be published here after each concert.</p>
+      Vienna, Prague and Eisenstadt will be published here after each concert.</p>
       <div class="empty">
         <div class="display">Concert videos &amp; photos &mdash; coming in 2027.</div>
-        <p>Each winner&rsquo;s live orchestral performance is professionally
-        recorded. Full videos and official photography will appear here after
-        the concerts in April&ndash;May 2027.</p>
+        <p>After each concert, a video record of the winner&rsquo;s performance is
+        provided for their own reference, and official photographs will appear
+        here following the 2027 concerts.</p>
       </div>
     </div>
   </div>
@@ -1282,12 +1405,13 @@ footer a:hover{color:var(--white)}
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="nyicc-mark-t.png" alt="NYICC logo" style="width:60px;height:60px;object-fit:contain;margin-bottom:14px">
+        <img src="nyicc-mark-gold.png" alt="NYICC logo" style="width:58px;height:58px;object-fit:contain;margin-bottom:14px">
         <div class="display">NYICC</div>
         <p>New York International Concerto Competition for Piano, Violin,
-        Flute, Cello and Vocal. An online competition with five confirmed
-        Winners&rsquo; Concerts in Zurich, Vienna and Prague, 2027. Sponsored by
-        IMK, in official partnership with IMK Vienna.</p>
+        Flute, Cello and Vocal.</p>
+        <p>An online competition with five confirmed Winners&rsquo; Concerts in
+        Zurich, Vienna and Prague, 2027.</p>
+        <p>Sponsored by IMK, in official partnership with IMK Vienna.</p>
       </div>
       <div>
         <h4>Competition</h4>
@@ -1307,8 +1431,17 @@ footer a:hover{color:var(--white)}
         <a class="js-apply" href="#home">Apply Online</a>
         <a href="mailto:contact@nyicc.org">contact@nyicc.org</a>
         <a href="https://www.schwingungen.at" target="_blank" rel="noopener">IMK Vienna &middot; schwingungen.at</a>
-        <a href="#">Instagram</a>
-        <a href="#">YouTube</a>
+        <div class="social-row">
+          <a class="social-ic" href="#" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram (link coming soon)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social-ic" href="#" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube (link coming soon)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social-ic" href="mailto:contact@nyicc.org" aria-label="Email" title="Email us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6 9-6"/></svg>
+          </a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1331,13 +1464,13 @@ const CONFIG = {
   earlyBirdEnd: new Date('2026-12-14T23:59:59-05:00'),
   deadline:     new Date('2027-01-31T23:59:59-05:00'),
   deadlineLabel:'Applications close',
-  feeEarly: 130,
-  feeRegular: 150,
+  feeEarly: 150,
+  feeRegular: 200,
 
   timeline: [
-    { date:'15 Oct 2026', title:'Applications open — Early Bird', tag:'USD 130',
+    { date:'15 Oct 2026', title:'Applications open — Early Bird', tag:'USD 150',
       desc:'The online application form opens. Entries submitted by 14 December 2026 enjoy the reduced early-bird fee.' },
-    { date:'15 Dec 2026', title:'Regular application period', tag:'USD 150',
+    { date:'15 Dec 2026', title:'Regular application period', tag:'USD 200',
       desc:'Entries continue at the regular fee until the final deadline.' },
     { date:'31 Jan 2027', title:'Application deadline', hl:true,
       desc:'Application form, documents and video link must be submitted, with payment completed.' },
@@ -1370,11 +1503,11 @@ const CONFIG = {
       orch:'North Czech Philharmonic Orchestra',
       work:'Rachmaninoff \u2014 Rhapsody on a Theme of Paganini',
       url:'https://www.obecnidum.cz/' },
-    { num:'V',   date:'29 May 2027',  cat:'Flute Winner',
-      venue:'Ehrbar Hall', city:'Vienna, Austria',
+    { num:'V',   date:'19 June 2027',  cat:'Flute Winner',
+      venue:'Haydn Hall', city:'Eisenstadt, Austria',
       orch:'Bohuslav Martin\u016f Philharmonic Orchestra',
       work:'C.P.E. Bach \u2014 Flute Concerto in A minor, Wq. 166',
-      url:'https://ehrbarsaal.at/en/' },
+      url:'https://esterhazy.at/schloss-esterhazy/der-haydnsaal' },
   ],
 
   // Jury placeholders — replace with official names, photos, bios.
