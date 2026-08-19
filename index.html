@@ -152,7 +152,7 @@ nav.main-nav{display:flex;align-items:center;gap:2px;margin-left:auto}
 /* Placeholder venue backgrounds — replace each with the real hall photo:
    replace the gradient with a real hall photo when needed */
 .venue-bg.v1{background:radial-gradient(ellipse at 30% 20%, #263a5e 0%, #101a2e 55%, #0a1120 100%)}   /* Tonhalle Zurich */
-.venue-bg.v2{background:radial-gradient(ellipse at 70% 25%, #3b2f52 0%, #171226 55%, #0c0917 100%)}   /* ORF TV Hall Vienna */
+.venue-bg.v2{background:radial-gradient(ellipse at 70% 25%, #3b2f52 0%, #171226 55%, #0c0917 100%)}   /* ORF RadioKulturhaus Vienna */
 .venue-bg.v3{background:radial-gradient(ellipse at 50% 15%, #4a3320 0%, #211508 55%, #120b04 100%)}   /* Smetana Hall Prague */
 .venue-bg.v4{background:radial-gradient(ellipse at 25% 30%, #52381c 0%, #241708 55%, #130c04 100%)}   /* Smetana Hall Prague */
 .venue-bg.v5{background:radial-gradient(ellipse at 65% 20%, #4d1f28 0%, #200d12 55%, #120609 100%)}   /* Haydn Hall Eisenstadt */
@@ -579,6 +579,8 @@ footer a{display:block;font-size:13.5px;padding:4px 0;color:rgba(255,255,255,.7)
 footer a:hover{color:var(--white)}
 .footer-brand .display{font-size:24px;color:var(--white)}
 .footer-brand p{font-size:13px;margin-top:10px;max-width:320px;line-height:1.7}
+.footer-brand .fb-lead{font-size:15px;color:rgba(255,255,255,.92);font-weight:500;margin-top:12px;max-width:none;white-space:nowrap}
+.footer-brand .fb-sub{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:3px}
 .social-row{display:flex;gap:12px;margin-top:10px}
 .social-ic{width:38px;height:38px;border:1px solid rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.75);transition:border-color .2s,color .2s,background .2s;padding:0}
 .social-ic:hover{color:var(--brass-soft);border-color:var(--brass-soft);background:rgba(199,169,111,.1)}
@@ -704,6 +706,12 @@ footer a:hover{color:var(--white)}
 .orch-card .ocity{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
 .orch-card h3{font-size:23px;margin:5px 0 10px}
 .orch-card p{font-size:13.5px;color:var(--ink-soft)}
+.org-social{display:flex;flex-wrap:wrap;gap:12px;max-width:560px}
+.org-ic{display:inline-flex;align-items:center;gap:10px;padding:11px 16px 11px 12px;border:1px solid var(--hairline);border-radius:6px;color:var(--ink-soft);font-size:13.5px;transition:border-color .2s,color .2s,background .2s}
+.org-ic:hover{border-color:var(--brass);color:var(--ink);background:rgba(199,169,111,.06)}
+.org-ic svg{width:19px;height:19px;color:var(--brass);flex-shrink:0}
+.partner-title{display:flex;align-items:center;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+.partner-imk-logo{height:52px;width:auto;flex-shrink:0}
 .orch-link{display:inline-block;margin-top:14px;font-size:12px;letter-spacing:.06em;color:var(--brass);border-bottom:1px solid var(--hairline);padding-bottom:2px;transition:border-color .2s,color .2s}
 .orch-link:hover{color:var(--ink);border-color:var(--brass)}
 </style>
@@ -762,7 +770,7 @@ footer a:hover{color:var(--white)}
 
   <!-- HERO : five confirmed 2027 concerts, carousel of the halls -->
   <div class="hero" id="hero">
-    <!-- Hall photography: Tonhalle, ORF TV Hall, Smetana Hall, Haydn Hall -->
+    <!-- Hall photography: Tonhalle, ORF RadioKulturhaus, Smetana Hall, Haydn Hall -->
     <div class="hero-slide active">
       <div class="venue-bg" style="background-image:url('hall-tonhalle.jpg')"></div>
       <div class="venue-tag">
@@ -777,7 +785,7 @@ footer a:hover{color:var(--white)}
       <div class="venue-bg" style="background-image:url('hall-orf.jpg')"></div>
       <div class="venue-tag">
         <div class="num">Violin Winner &middot; Concert II</div>
-        <div class="name">ORF TV Hall</div>
+        <div class="name">ORF RadioKulturhaus</div>
         <div class="date">10 April 2027 &middot; Vienna, Austria</div>
         <div class="orch">with the Bohuslav Martin&#367; Philharmonic Orchestra</div>
         <div class="work">Bruch &mdash; Violin Concerto</div>
@@ -786,7 +794,7 @@ footer a:hover{color:var(--white)}
     <div class="hero-slide">
       <div class="venue-bg" style="background-image:url('hall-smetana.jpg')"></div>
       <div class="venue-tag">
-        <div class="num">Vocal Winner &middot; Concert III</div>
+        <div class="num">Voice Winner &middot; Concert III</div>
         <div class="name">Smetana Hall</div>
         <div class="date">24 April 2027 &middot; Prague, Czech Republic</div>
         <div class="orch">with the North Czech Philharmonic Orchestra</div>
@@ -816,13 +824,13 @@ footer a:hover{color:var(--white)}
 
     <div class="hero-content">
       <div class="hero-kicker"><span class="dot"></span>Concerto Competition</div>
-      <h1>Perform with a professional orchestra<br><em>on prestigious stages across Europe.</em></h1>
+      <h1>Perform with professional orchestras<br><em>on prestigious stages across Europe.</em></h1>
       <p class="hero-sub">The <strong>New York International Concerto Competition</strong>
-        for Piano, Violin, Flute, Cello and Vocal is judged entirely online &mdash;
-        and its five winners step onto real stages: <strong>Tonhalle Zurich, ORF
-        TV Hall Vienna and Smetana Hall Prague</strong>, with professional
-        European orchestras, on dates that are already confirmed. A privilege
-        no other international competition offers.</p>
+        for Piano, Violin, Flute, Cello, and Voice is judged entirely online. Its
+        winners will step onto renowned stages &mdash; including <strong>Tonhalle
+        Zurich, ORF RadioKulturhaus Vienna, Smetana Hall Prague, and Haydn Hall
+        Eisenstadt</strong> &mdash; to perform with professional European orchestras
+        on confirmed dates. A privilege no other international competition offers.</p>
       <div class="hero-ctas">
         <a class="btn-gold js-apply" href="#home">Apply Online</a>
         <a class="btn-ghost" href="#schedule">View the 2027 Winners’ Concerts</a>
@@ -835,7 +843,7 @@ footer a:hover{color:var(--white)}
         <button class="hero-arrow" id="heroPrev" aria-label="Previous concert">&#8592;</button>
         <button class="hero-dot active" data-slide="0"><span class="roman">I</span><span class="txt">Cello &middot; Zurich</span></button>
         <button class="hero-dot" data-slide="1"><span class="roman">II</span><span class="txt">Violin &middot; Vienna</span></button>
-        <button class="hero-dot" data-slide="2"><span class="roman">III</span><span class="txt">Vocal &middot; Prague</span></button>
+        <button class="hero-dot" data-slide="2"><span class="roman">III</span><span class="txt">Voice &middot; Prague</span></button>
         <button class="hero-dot" data-slide="3"><span class="roman">IV</span><span class="txt">Piano &middot; Prague</span></button>
         <button class="hero-dot" data-slide="4"><span class="roman">V</span><span class="txt">Flute &middot; Eisenstadt</span></button>
         <button class="hero-arrow" id="heroNext" aria-label="Next concert">&#8594;</button>
@@ -887,7 +895,7 @@ footer a:hover{color:var(--white)}
     <div class="section" style="padding-top:60px;padding-bottom:60px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap">
       <div style="max-width:640px">
         <div class="eyebrow on-dark">The NYICC Privilege</div>
-        <h2 class="display" style="font-size:clamp(24px,3.2vw,34px);margin-top:10px;line-height:1.3">The 2027 Winners&rsquo; Concert Series &mdash; five confirmed concerts in Zurich, Vienna &amp; Prague.</h2>
+        <h2 class="display" style="font-size:clamp(24px,3.2vw,34px);margin-top:10px;line-height:1.3">The 2027 Winners&rsquo; Concert Series &mdash; five confirmed concerts across Zurich, Vienna, Prague &amp; Eisenstadt.</h2>
       </div>
       <a class="btn-gold" href="#schedule">Concerts &amp; Winner Benefits</a>
     </div>
@@ -955,16 +963,39 @@ footer a:hover{color:var(--white)}
       <p class="lede" style="margin-bottom:34px">NYICC is officially sponsored by
       IMK Vienna, whose extensive European orchestra network makes the 2027
       Winners&rsquo; Concert Series possible.</p>
-      <table class="rule-table" style="margin-bottom:24px">
+      <table class="rule-table" style="margin-bottom:26px">
         <tr><td>Presented by</td><td>New York International Concerto Competition (NYICC)</td></tr>
       </table>
-      <p class="divider-note">The organizing committee, partner institutions and
-      jury will be published here as they are confirmed.</p>
+      <div class="eyebrow" style="margin-bottom:12px">Contact &amp; Social</div>
+      <div class="org-social">
+        <a class="org-ic" href="mailto:contact@nyicc.org" aria-label="Email" title="contact@nyicc.org">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6 9-6"/></svg>
+          <span>contact@nyicc.org</span>
+        </a>
+        <a class="org-ic" href="#" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a class="org-ic" href="#" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 8.5h2.2V5.6c-.4-.05-1.3-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.3H7.6v3h2.4V22h3v-7.2h2.3l.4-3h-2.7V9.6c0-.9.2-1.1 1-1.1z" fill="currentColor" stroke="none"/></svg>
+          <span>Facebook</span>
+        </a>
+        <a class="org-ic" href="#" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"/></svg>
+          <span>YouTube</span>
+        </a>
+      </div>
+      <p class="divider-note" style="margin-top:22px">Social links will be activated
+      as the official NYICC channels go live. The organizing committee, partner
+      institutions and jury will be published here as they are confirmed.</p>
     </div>
 
     <div class="tab-panel" id="about-partners">
       <div class="eyebrow" style="margin-bottom:10px">Our Sponsor &amp; Official Partner</div>
-      <h2 class="display" style="font-size:34px;margin-bottom:8px">IMK &mdash; Verein f&uuml;r Internationale Musik- und Kulturf&ouml;rderung</h2>
+      <div class="partner-title">
+        <img src="imk-logo-light.png" alt="IMK" class="partner-imk-logo">
+        <h2 class="display" style="font-size:34px;margin:0">IMK &mdash; Verein f&uuml;r Internationale Musik- und Kulturf&ouml;rderung</h2>
+      </div>
       <p class="lede" style="margin-bottom:14px">The promise of a real orchestral
       debut only means something if the organization behind it can deliver. NYICC
       is sponsored by IMK Vienna &mdash; founded in <strong>1991</strong> and, over
@@ -1049,7 +1080,7 @@ footer a:hover{color:var(--white)}
       </div>
 
       <div style="margin-top:44px">
-        <div class="eyebrow" style="margin-bottom:14px">University Partnerships &mdash; the Scholarship Orchestra Project</div>
+        <div class="eyebrow" style="margin-bottom:14px">University Partnerships &mdash; Scholarship Concert</div>
         <p style="color:var(--ink-soft);max-width:820px;margin-bottom:22px">Driven
         by a mission to connect music education directly with the stage, IMK
         pursues its Scholarship Orchestra project in partnership with leading
@@ -1115,7 +1146,7 @@ footer a:hover{color:var(--white)}
     <table class="rule-table">
       <tr><th>Item</th><th>Details</th></tr>
       <tr><td>Format</td><td>International online music competition. All judging is conducted by online video submission (YouTube link).</td></tr>
-      <tr><td>Categories</td><td>Piano &middot; Violin &middot; Flute &middot; Cello &middot; Vocal &mdash; one category per application</td></tr>
+      <tr><td>Categories</td><td>Piano &middot; Violin &middot; Flute &middot; Cello &middot; Voice &mdash; one category per application</td></tr>
       <tr><td>Age</td><td><strong>No age limit.</strong> All participants are judged by the same artistic standard.</td></tr>
       <tr><td>Nationality</td><td>Open to musicians of all nationalities</td></tr>
       <tr><td>Language</td><td>English is the official language of the competition</td></tr>
@@ -1131,12 +1162,12 @@ footer a:hover{color:var(--white)}
       <div class="fee-cards">
         <div class="fee-card early">
           <div class="fee-badge">Early Bird</div>
-          <div class="fee-window">15 Oct &ndash; 14 Dec 2026</div>
+          <div class="fee-window">15 Oct &ndash; 14 Nov 2026</div>
           <div class="fee-amt">$150<small> USD</small></div>
           <p>Reduced fee for entries submitted during the early-bird window.</p>
         </div>
         <div class="fee-card">
-          <div class="fee-window">15 Dec 2026 &ndash; 31 Jan 2027</div>
+          <div class="fee-window">15 Nov 2026 &ndash; 31 Jan 2027</div>
           <div class="fee-amt">$200<small> USD</small></div>
           <p>Regular fee for entries submitted until the final deadline.</p>
         </div>
@@ -1164,7 +1195,7 @@ footer a:hover{color:var(--white)}
       <div class="reg-article">
         <h3><span class="art">Article 2</span>Categories &amp; Repertoire</h3>
         <ul>
-          <li>Piano &middot; Violin &middot; Flute &middot; Cello &middot; Vocal</li>
+          <li>Piano &middot; Violin &middot; Flute &middot; Cello &middot; Voice</li>
           <li>Repertoire requirements for each category are set out in detail on the <a href="#guide/repertoire" style="color:var(--brass)">Competition Repertoire</a> tab.</li>
         </ul>
       </div>
@@ -1381,19 +1412,20 @@ footer a:hover{color:var(--white)}
     <div class="venue-block">
       <div class="venue-photo vcarousel" data-hall="orf">
         <div class="vc-slide active" style="background-image:url('hall-orf.jpg')"></div><div class="vc-slide" style="background-image:url('g-orf-1.jpg');background-position:center 60%"></div>
-        <span class="vph-label">ORF TV Hall &middot; Vienna</span>
+        <span class="vph-label">ORF RadioKulturhaus &middot; Vienna</span>
         <button class="vc-arrow vc-prev" aria-label="Previous photo">&#8249;</button>
         <button class="vc-arrow vc-next" aria-label="Next photo">&#8250;</button>
         <div class="vc-dots"><button class="vc-dot active" data-i="0" aria-label="Photo 1"></button><button class="vc-dot" data-i="1" aria-label="Photo 2"></button></div>
       </div>
       <div class="venue-info">
         <div class="vcity">Vienna, Austria</div>
-        <h3>ORF TV Hall</h3>
+        <h3>ORF RadioKulturhaus</h3>
         <div class="vmeta">Violin Winner &middot; 10 April 2027</div>
-        <p>A broadcast-quality concert hall in the heart of Europe&rsquo;s musical
-        capital, equipped for professional recording and streaming &mdash; a
-        fitting stage for the NYICC violin winner with the Bohuslav Martin&#367;
-        Philharmonic Orchestra.</p>
+        <p>An iconic venue operated by Austria&rsquo;s national public broadcaster
+        (ORF), located in the heart of Europe&rsquo;s musical capital. Celebrated
+        for its rich musical heritage and clear, warm acoustics, it provides an
+        inspiring setting for the NYICC violin winner to perform alongside the
+        Bohuslav Martin&#367; Philharmonic Orchestra.</p>
       </div>
     </div>
 
@@ -1408,7 +1440,7 @@ footer a:hover{color:var(--white)}
       <div class="venue-info">
         <div class="vcity">Prague, Czech Republic</div>
         <h3>Smetana Hall</h3>
-        <div class="vmeta">Vocal Winner &middot; 24 April &nbsp;|&nbsp; Piano Winner &middot; 8 May 2027</div>
+        <div class="vmeta">Voice Winner &middot; 24 April &nbsp;|&nbsp; Piano Winner &middot; 8 May 2027</div>
         <p>The magnificent Art Nouveau hall inside Prague&rsquo;s Municipal House,
         one of the great ceremonial concert spaces of Central Europe. It hosts
         two NYICC concerts &mdash; vocal and piano &mdash; with the North Czech
@@ -1514,7 +1546,7 @@ footer a:hover{color:var(--white)}
         <div class="filter-group"><label for="fYear">Edition</label>
           <select id="fYear"><option>All editions</option><option>1st &middot; 2026&ndash;27</option></select></div>
         <div class="filter-group"><label for="fCat">Category</label>
-          <select id="fCat"><option>All categories</option><option>Piano</option><option>Violin</option><option>Flute</option><option>Cello</option><option>Vocal</option></select></div>
+          <select id="fCat"><option>All categories</option><option>Piano</option><option>Violin</option><option>Flute</option><option>Cello</option><option>Voice</option></select></div>
       </div>
       <div class="empty">
         <div class="display">The first laureates will be named on 28 February 2027.</div>
@@ -1549,10 +1581,10 @@ footer a:hover{color:var(--white)}
       <div class="footer-brand">
         <img src="nyicc-mark-gold.png" alt="NYICC logo" style="width:58px;height:58px;object-fit:contain;margin-bottom:14px">
         <div class="display">NYICC</div>
-        <p>New York International Concerto Competition for Piano, Violin,
-        Flute, Cello and Vocal.</p>
-        <p>An online competition with five confirmed Winners&rsquo; Concerts in
-        Zurich, Vienna and Prague, 2027.</p>
+        <p class="fb-lead">New York International Concerto Competition</p>
+        <p class="fb-sub">for Piano, Violin, Flute, Cello, and Voice.</p>
+        <p>An online competition with five confirmed Winners&rsquo; Concerts across
+        Zurich, Vienna, Prague, and Eisenstadt in 2027.</p>
         <p>Sponsored by IMK, in official partnership with IMK Vienna.</p>
       </div>
       <div>
@@ -1603,7 +1635,7 @@ footer a:hover{color:var(--white)}
    ============================================================ */
 const CONFIG = {
   // Application window (New York time)
-  earlyBirdEnd: new Date('2026-12-14T23:59:59-05:00'),
+  earlyBirdEnd: new Date('2026-11-14T23:59:59-05:00'),
   deadline:     new Date('2027-01-31T23:59:59-05:00'),
   deadlineLabel:'Applications close',
   feeEarly: 150,
@@ -1611,8 +1643,8 @@ const CONFIG = {
 
   timeline: [
     { date:'15 Oct 2026', title:'Applications open — Early Bird', tag:'USD 150',
-      desc:'The online application form opens. Entries submitted by 14 December 2026 enjoy the reduced early-bird fee.' },
-    { date:'15 Dec 2026', title:'Regular application period', tag:'USD 200',
+      desc:'The online application form opens. Entries submitted by 14 November 2026 enjoy the reduced early-bird fee.' },
+    { date:'15 Nov 2026', title:'Regular application period', tag:'USD 200',
       desc:'Entries continue at the regular fee until the final deadline.' },
     { date:'31 Jan 2027', title:'Application deadline', hl:true,
       desc:'Application form, documents and video link must be submitted, with payment completed.' },
@@ -1631,11 +1663,11 @@ const CONFIG = {
       work:'Saint-Sa\u00ebns \u2014 Cello Concerto No. 1',
       url:'https://www.tonhalle-orchester.ch/en/home-tz/konzerthaus/tonhalle-zuerich/' },
     { num:'II',  date:'10 April 2027', cat:'Violin Winner',
-      venue:'ORF TV Hall', city:'Vienna, Austria',
+      venue:'ORF RadioKulturhaus', city:'Vienna, Austria',
       orch:'Bohuslav Martin\u016f Philharmonic Orchestra',
       work:'Bruch \u2014 Violin Concerto',
       url:'https://radiokulturhaus.orf.at/' },
-    { num:'III', date:'24 April 2027', cat:'Vocal Winner',
+    { num:'III', date:'24 April 2027', cat:'Voice Winner',
       venue:'Smetana Hall', city:'Prague, Czech Republic',
       orch:'North Czech Philharmonic Orchestra',
       work:'Celebrated Arias',
@@ -1661,7 +1693,7 @@ const CONFIG = {
     { name:'L. Moreau',     role:'Flute' },
     { name:'D. Steinberg',  role:'Cello' },
     { name:'R. Okafor',     role:'Cello' },
-    { name:'E. Rossini',    role:'Vocal' },
+    { name:'E. Rossini',    role:'Voice' },
   ],
 };
 
