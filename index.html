@@ -195,7 +195,7 @@ nav.main-nav{display:flex;align-items:center;gap:2px;margin-left:auto}
   text-shadow:0 2px 24px rgba(10,17,32,.7);
 }
 .hero h1 em{font-style:italic;color:var(--brass-soft)}
-.hero .hero-sub{font-size:clamp(15px,1.7vw,18.5px);color:rgba(255,255,255,.9);max-width:680px;font-weight:300;text-shadow:0 1px 12px rgba(10,17,32,.65)}
+.hero .hero-sub{font-size:clamp(15px,1.7vw,18.5px);color:rgba(255,255,255,.9);max-width:760px;font-weight:300;text-shadow:0 1px 12px rgba(10,17,32,.65)}
 .hero .hero-sub strong{color:var(--white);font-weight:500}
 .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
 .btn-gold{
@@ -729,6 +729,17 @@ footer a:hover{color:var(--white)}
 #about-partners p,#about-partners .lede{text-align:justify;text-justify:inter-word;max-width:none;hyphens:auto}
 #about-partners .divider-note,#about-partners .card p{text-align:left}
 .lede.just{text-align:justify;text-justify:inter-word;max-width:none;hyphens:auto}
+/* Justify body copy in About panels, Venues, Winners, and how-it-works cards */
+#about-greeting p:not([style*="font-family:var(--font-display)"]),
+#about-organization > .lede,
+#winners-media .lede,
+.venue-info p{
+  text-align:justify;text-justify:inter-word;hyphens:auto;
+}
+/* how-it-works cards: justify the paragraphs, keep last line natural */
+.band-firstband .card p{text-align:justify;text-justify:inter-word;hyphens:auto}
+/* hero sub: match the H1 width and justify */
+.hero .hero-sub{text-align:justify;text-justify:inter-word;hyphens:auto}
 .hall-site{display:inline-block;margin-left:8px;font-size:12px;letter-spacing:.04em;color:var(--brass);white-space:nowrap;border-bottom:1px solid var(--hairline);padding-bottom:1px}
 .hall-site:hover{color:var(--ink);border-color:var(--brass)}
 .partner-imk-logo{height:52px;width:auto;flex-shrink:0}
