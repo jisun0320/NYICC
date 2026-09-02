@@ -375,6 +375,32 @@ main{min-height:60vh}
 
 /* Jury */
 .jury-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+/* Chair message (Greeting tab) */
+.chair-message{display:grid;grid-template-columns:280px 1fr;gap:44px;align-items:start;max-width:1000px}
+.chair-photo img{width:100%;border-radius:4px;display:block;box-shadow:0 14px 40px rgba(21,19,15,.14)}
+.chair-name{font-family:var(--font-display);font-size:19px;margin-top:14px;color:var(--ink)}
+.chair-role{font-size:12.5px;letter-spacing:.05em;color:var(--brass);text-transform:uppercase;margin-top:3px}
+.chair-text p{color:var(--ink-soft);margin-bottom:14px;text-align:justify;text-justify:inter-word;hyphens:auto}
+.chair-text p:last-child{margin-bottom:0}
+@media (max-width:760px){.chair-message{grid-template-columns:1fr;gap:24px}.chair-photo{max-width:260px}}
+/* Jury tabs */
+.jury-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;border-bottom:1px solid var(--hairline);padding-bottom:0}
+.jury-tab{
+  background:none;border:none;padding:10px 16px;font-size:14px;letter-spacing:.04em;
+  color:var(--stone);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s;
+}
+.jury-tab:hover{color:var(--ink)}
+.jury-tab.active{color:var(--ink);border-bottom-color:var(--brass);font-weight:500}
+/* Jury person cards */
+.jury-stage{display:flex;flex-direction:column;gap:40px}
+.jperson{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start;max-width:1040px}
+.jperson-photo img{width:100%;border-radius:4px;display:block;box-shadow:0 12px 34px rgba(21,19,15,.12)}
+.jperson-name{font-family:var(--font-display);font-size:25px;color:var(--ink)}
+.jperson-role{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-top:5px;margin-bottom:16px}
+.jperson-msg p{color:var(--ink-soft);margin-bottom:13px;text-align:justify;text-justify:inter-word;hyphens:auto;line-height:1.75}
+.jperson-msg p:last-child{margin-bottom:0}
+.jperson-note{color:var(--stone);font-style:italic}
+@media (max-width:760px){.jperson{grid-template-columns:1fr;gap:20px}.jperson-photo{max-width:280px}}
 @media (max-width:960px){.jury-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:540px){.jury-grid{grid-template-columns:1fr}}
 .jury-photo{
@@ -767,7 +793,8 @@ footer a:hover{color:var(--white)}
     <nav class="main-nav" id="mainNav" aria-label="Primary">
       <div class="nav-item"><a class="nav-link" data-route="about" href="#about">About</a>
         <div class="dropdown">
-          <a href="#about/greeting">Greeting &amp; Mission</a>
+          <a href="#about/greeting">Greeting</a>
+          <a href="#about/mission">Mission</a>
           <a href="#about/organization">Organization</a>
           <a href="#about/partners">Partners</a>
         </div>
@@ -950,12 +977,39 @@ footer a:hover{color:var(--white)}
   </div>
   <div class="section">
     <div class="tabs" role="tablist">
-      <button class="tab-btn" data-tab="greeting" data-page="about">Greeting &amp; Mission</button>
+      <button class="tab-btn" data-tab="greeting" data-page="about">Greeting</button>
+      <button class="tab-btn" data-tab="mission" data-page="about">Mission</button>
       <button class="tab-btn" data-tab="organization" data-page="about">Organization</button>
       <button class="tab-btn" data-tab="partners" data-page="about">Partners</button>
     </div>
 
     <div class="tab-panel" id="about-greeting">
+      <div class="chair-message">
+        <div class="chair-photo">
+          <img src="jury-mccorvey.jpg" alt="Prof. Everett McCorvey">
+          <div class="chair-name">Prof. Everett McCorvey, D.M.A.</div>
+          <div class="chair-role">Conductor &middot; Chair of the NYICC Jury</div>
+        </div>
+        <div class="chair-text">
+          <p>It is my great pleasure to extend my warmest congratulations on the
+          launch of the New York International Concerto Competition (NYICC).</p>
+          <p>I would like to express my sincere appreciation to all distinguished
+          members of the international jury for their dedication, artistic insight,
+          and commitment to discovering and encouraging exceptional musical talent.</p>
+          <p>May the NYICC become an inspiring platform where gifted musicians from
+          around the world are given the opportunity to share their artistry,
+          pursue their dreams, and take meaningful steps onto the international
+          stage.</p>
+          <p>I wish the entire organizing team every success, and I look forward to
+          seeing the NYICC grow into a respected and influential international music
+          competition for generations to come.</p>
+          <p>With my warmest congratulations and best wishes for a great success to
+          all who participate in the New York International Concerto Competition.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="about-mission">
       <div class="eyebrow" style="margin-bottom:10px">NYICC &mdash; Opening a New Path to the World Stage</div>
       <div class="grid-2" style="align-items:start">
         <div>
@@ -1547,10 +1601,8 @@ footer a:hover{color:var(--white)}
     </div>
   </div>
   <div class="section">
-    <div class="jury-grid" id="juryGrid"></div>
-    <p class="divider-note">Names shown are placeholders. Official jury
-    members, portraits and biographies will replace these cards upon
-    announcement.</p>
+    <div class="jury-tabs" id="juryTabs"></div>
+    <div class="jury-stage" id="juryStage"></div>
   </div>
 </section>
 
@@ -1848,20 +1900,65 @@ function renderTimeline(elId, limit){
 }
 renderTimeline('fullTimeline');
 
-const juryGrid = document.getElementById('juryGrid');
-juryGrid.innerHTML = CONFIG.jury.map(j => `
-  <div class="jury-card">
-    <div class="jury-photo">
-      <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-        <circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/>
-      </svg>
-      <span class="ph">Portrait to follow</span>
-    </div>
-    ${j.chair ? '<span class="chair-badge">Jury Chair</span>' : ''}
-    <div class="jname">${j.name}</div>
-    <div class="jrole">${j.role}</div>
-    <div class="jbio">Biography to be announced.</div>
-  </div>`).join('');
+/* ============================================================
+   Jury — tabbed by role / instrument
+   ============================================================ */
+const JURY = [
+  { group:'Chair', name:'Prof. Everett McCorvey, D.M.A.', role:'Conductor · Jury Chair',
+    photo:'jury-mccorvey.jpg',
+    msg:`It is my great pleasure to extend my warmest congratulations on the launch of the New York International Concerto Competition (NYICC). I would like to express my sincere appreciation to all distinguished members of the international jury for their dedication, artistic insight, and commitment to discovering and encouraging exceptional musical talent. May the NYICC become an inspiring platform where gifted musicians from around the world are given the opportunity to share their artistry, pursue their dreams, and take meaningful steps onto the international stage.` },
+  { group:'Conductors', name:'Felipe Tristán', role:'Conductor',
+    photo:'jury-tristan.jpg',
+    msg:`Everywhere in the world, we encounter extraordinary young musicians with the talent and dedication to build meaningful careers, yet too few are given the opportunity that matters most: to step onto the stage and perform with a professional orchestra. NYICC addresses this challenge in a very concrete way. Through IMK’s decades of experience and its extensive network of orchestras and concert halls across Europe, the competition creates a genuine bridge between exceptional young talent and the professional concert stage. I am delighted and proud to serve as a jury member for the inaugural NYICC, and I look forward to discovering the remarkable musicians who will take their next step onto the international stage.` },
+  { group:'Conductors', name:'Prof. Ernest Hoetzl', role:'Artistic Director, Musikverein Kärnten',
+    photo:'jury-hoetzl.jpg', msg:'' },
+  { group:'Conductors', name:'Conrad van Alphen', role:'Chief Conductor, Rotterdam Sinfonia',
+    photo:'jury-vanalphen.jpg',
+    msg:`As a conductor born in South Africa who has built my musical career in Rotterdam and worked with musicians from many different countries and cultures, I have always believed deeply in the power of music to transcend borders and bring people together. Competitions such as NYICC provide young and talented musicians with an important opportunity to share their artistry, challenge themselves, and take meaningful steps toward an international musical career. I sincerely wish the NYICC continued growth and great success, and I hope it will become an inspiring musical platform where exceptional young artists from around the world can be discovered, encouraged, and celebrated.` },
+  { group:'Conductors', name:'Sergey Smbatyan', role:'Chief Conductor, Armenian State Symphony',
+    photo:'jury-smbatyan.jpg', msg:'' },
+  { group:'Piano', name:'Prof. Christopher Hinterhuber', role:'Piano',
+    photo:'jury-hinterhuber.jpg', msg:'' },
+  { group:'Violin', name:'Prof. Cihat Aşkın', role:'Violin',
+    photo:'jury-askin.jpg', msg:'' },
+  { group:'Cello', name:'Prof. Meehae Ryo', role:'Cello · Artistic Director, IMK Vienna',
+    photo:'jury-ryo.jpg',
+    msg:`As the Artistic Director of IMK Vienna, it is my great joy and privilege to extend my heartfelt congratulations on this meaningful occasion. I am especially delighted to see this competition becoming a vibrant bridge between Europe and the United States, bringing together talented musicians, distinguished artists, and musical institutions through the universal language of classical music. May this competition continue to discover and inspire exceptional young artists, strengthen the musical connection between Europe and America, and grow into an important international platform for the next generation of classical musicians.` },
+  { group:'Flute', name:'Prof. Luisa Sello', role:'Flute',
+    photo:'jury-sello.jpg', msg:'' },
+  { group:'Voice', name:'Prof. Vladimir Kiradjiev', role:'Voice · Opera Conductor',
+    photo:'jury-kiradjiev.jpg', msg:'' },
+];
+const JURY_GROUPS = ['Chair','Conductors','Piano','Violin','Cello','Flute','Voice'];
+(function(){
+  const tabsEl = document.getElementById('juryTabs');
+  const stageEl = document.getElementById('juryStage');
+  if(!tabsEl||!stageEl) return;
+  tabsEl.innerHTML = JURY_GROUPS.map((g,i)=>
+    `<button class="jury-tab${i===0?' active':''}" data-g="${g}">${g}</button>`).join('');
+  function render(group){
+    const members = JURY.filter(j=>j.group===group);
+    stageEl.innerHTML = members.map(j=>`
+      <div class="jperson">
+        <div class="jperson-photo"><img src="${j.photo}" alt="${j.name}" loading="lazy"></div>
+        <div class="jperson-info">
+          <div class="jperson-name">${j.name}</div>
+          <div class="jperson-role">${j.role}</div>
+          ${j.msg ? `<div class="jperson-msg">${j.msg.split('\n').map(p=>`<p>${p}</p>`).join('')}</div>`
+                  : `<p class="jperson-note">Full profile to be announced.</p>`}
+        </div>
+      </div>`).join('');
+  }
+  tabsEl.querySelectorAll('.jury-tab').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      tabsEl.querySelectorAll('.jury-tab').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.g);
+    });
+  });
+  render('Chair');
+})();
+
 
 /* ============================================================
    Hash routing — native browser back/forward supported
