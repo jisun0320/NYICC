@@ -1904,7 +1904,7 @@ renderTimeline('fullTimeline');
    Jury — tabbed by role / instrument
    ============================================================ */
 const JURY = [
-  { group:'Chair', name:'Prof. Everett McCorvey, D.M.A.', role:'Conductor · Jury Chair',
+  { group:'Conductors', name:'Prof. Everett McCorvey, D.M.A.', role:'Conductor · Jury Chair',
     photo:'jury-mccorvey.jpg',
     msg:`It is my great pleasure to extend my warmest congratulations on the launch of the New York International Concerto Competition (NYICC). I would like to express my sincere appreciation to all distinguished members of the international jury for their dedication, artistic insight, and commitment to discovering and encouraging exceptional musical talent. May the NYICC become an inspiring platform where gifted musicians from around the world are given the opportunity to share their artistry, pursue their dreams, and take meaningful steps onto the international stage.` },
   { group:'Conductors', name:'Felipe Tristán', role:'Conductor',
@@ -1929,7 +1929,7 @@ const JURY = [
   { group:'Voice', name:'Prof. Vladimir Kiradjiev', role:'Voice · Opera Conductor',
     photo:'jury-kiradjiev.jpg', msg:'' },
 ];
-const JURY_GROUPS = ['Chair','Conductors','Piano','Violin','Cello','Flute','Voice'];
+const JURY_GROUPS = ['Conductors','Piano','Violin','Cello','Flute','Voice'];
 (function(){
   const tabsEl = document.getElementById('juryTabs');
   const stageEl = document.getElementById('juryStage');
@@ -1956,7 +1956,7 @@ const JURY_GROUPS = ['Chair','Conductors','Piano','Violin','Cello','Flute','Voic
       render(btn.dataset.g);
     });
   });
-  render('Chair');
+  render('Conductors');
 })();
 
 
