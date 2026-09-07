@@ -614,10 +614,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7)}
 .footer-inner{max-width:var(--maxw);margin:0 auto;padding:64px 28px 40px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12)}
 @media (max-width:820px){.footer-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){
-  .footer-grid{grid-template-columns:1fr;gap:30px}
-  .footer-brand .fb-lead{white-space:normal}
-}
 footer h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-soft);margin-bottom:16px}
 footer a{display:block;font-size:13.5px;padding:4px 0;color:rgba(255,255,255,.7)}
 footer a:hover{color:var(--white)}
@@ -1249,12 +1245,12 @@ footer a:hover{color:var(--white)}
       <div class="fee-cards">
         <div class="fee-card early">
           <div class="fee-badge">Early Bird</div>
-          <div class="fee-window">15 Oct &ndash; 14 Nov 2026</div>
+          <div class="fee-window">1 Nov &ndash; 30 Nov 2026</div>
           <div class="fee-amt">$150<small> USD</small></div>
           <p>Reduced fee for entries submitted during the early-bird window.</p>
         </div>
         <div class="fee-card">
-          <div class="fee-window">15 Nov 2026 &ndash; 31 Jan 2027</div>
+          <div class="fee-window">1 Dec 2026 &ndash; 31 Jan 2027</div>
           <div class="fee-amt">$200<small> USD</small></div>
           <p>Regular fee for entries submitted until the final deadline.</p>
         </div>
@@ -1301,13 +1297,12 @@ footer a:hover{color:var(--white)}
       <div class="reg-article">
         <h3><span class="art">Article 5</span>Video Submission</h3>
         <ul>
-          <li>The performer&rsquo;s hands, instrument, and face must be clearly visible throughout the performance.</li>
-          <li>The video must be a continuous, unedited recording of the submitted work. Minor adjustments to image brightness, contrast, or audio level are permitted, provided that they do not alter the performance itself.</li>
-          <li>Video and audio quality must be sufficient for the Jury to clearly evaluate the performance and identify the applicant.</li>
-          <li>Videos recorded on or after July 1, 2026, will be accepted.</li>
-          <li>By submitting the application, the applicant confirms that the video was recorded within the eligible period and that the performance is their own work.</li>
-          <li>The use of AI-generated performances, deepfakes, synthesized audio, or any technology that materially alters the performance is strictly prohibited.</li>
-          <li>The Organizer reserves the right to request additional verification or supporting materials if the authenticity of a submission is reasonably questioned.</li>
+          <li>Before performing, the applicant must state aloud their full name, category, the work to be performed, and the recording date.</li>
+          <li>The performer&rsquo;s hands, instrument and face must be visible on screen throughout. Camera switching or multi-angle compositing is prohibited.</li>
+          <li>The video must be an unedited, continuous recording.</li>
+          <li>Video and audio quality must be sufficient to clearly identify the applicant.</li>
+          <li>Only videos recorded within the designated period (from the opening of applications until the day before the deadline) are accepted.</li>
+          <li>The use of AI-generated content, deepfakes, or synthesized audio is strictly prohibited.</li>
         </ul>
       </div>
       <div class="reg-article">
@@ -1347,7 +1342,6 @@ footer a:hover{color:var(--white)}
       </div>
       <div class="reg-article">
         <h3><span class="art">Appendix</span>Required Documents</h3>
-        <p style="color:var(--ink-soft);margin-bottom:14px;text-align:justify;text-justify:inter-word;max-width:100%">These documents are not part of the initial application. Only prize winners will be required to submit the documents listed below at a later stage, upon request by the Organizer.</p>
         <ul>
           <li>Copy of passport or ID</li>
           <li>Biography of 100&ndash;150 words</li>
@@ -1465,7 +1459,7 @@ footer a:hover{color:var(--white)}
 <section class="page" id="page-venues">
   <div class="page-head">
     <div class="section">
-      <div class="eyebrow on-dark">04 &middot; Venues &amp; Orchestras</div>
+      <div class="eyebrow on-dark">The 2027 Stages</div>
       <h1>Venues &amp; Orchestras</h1>
       <p>The halls and orchestras that make the NYICC privilege real. Each
       category winner performs in one of these houses with a professional
@@ -1599,7 +1593,7 @@ footer a:hover{color:var(--white)}
 <section class="page" id="page-jury">
   <div class="page-head">
     <div class="section">
-      <div class="eyebrow on-dark">05 &middot; Jury</div>
+      <div class="eyebrow on-dark">04 &middot; Jury</div>
       <h1>The Jury</h1>
       <p>An international panel across all five categories. Performances are
       judged on musicality, technique, interpretation, expression and overall
@@ -1729,16 +1723,16 @@ footer a:hover{color:var(--white)}
    ============================================================ */
 const CONFIG = {
   // Application window (New York time)
-  earlyBirdEnd: new Date('2026-11-14T23:59:59-05:00'),
+  earlyBirdEnd: new Date('2026-11-30T23:59:59-05:00'),
   deadline:     new Date('2027-01-31T23:59:59-05:00'),
   deadlineLabel:'Applications close',
   feeEarly: 150,
   feeRegular: 200,
 
   timeline: [
-    { date:'15 Oct 2026', title:'Applications open — Early Bird', tag:'USD 150',
-      desc:'The online application form opens. Entries submitted by 14 November 2026 enjoy the reduced early-bird fee.' },
-    { date:'15 Nov 2026', title:'Regular application period', tag:'USD 200',
+    { date:'1 Nov 2026', title:'Applications open — Early Bird', tag:'USD 150',
+      desc:'The online application form opens. Entries submitted by 30 November 2026 enjoy the reduced early-bird fee.' },
+    { date:'1 Dec 2026', title:'Regular application period', tag:'USD 200',
       desc:'Entries continue at the regular fee until the final deadline.' },
     { date:'31 Jan 2027', title:'Application deadline', hl:true,
       desc:'Application form, documents and video link must be submitted, with payment completed.' },
@@ -1797,7 +1791,7 @@ const CONFIG = {
    링크를 넣으면 모든 'Apply Online' 버튼이 바로 Jotform으로
    연결됩니다(새 탭). 비워두면 임시 안내 알림이 뜹니다.
    ============================================================ */
-const JOTFORM_URL = 'https://form.jotform.com/262272742209052';
+const JOTFORM_URL = 'https://forms.fillout.com/t/bRqbn6Q3u6us';
 document.querySelectorAll('.js-apply').forEach(a => {
   if (JOTFORM_URL) {
     a.href = JOTFORM_URL; a.target = '_blank'; a.rel = 'noopener';
@@ -1922,21 +1916,11 @@ const JURY = [
     photo:'jury-vanalphen.jpg',
     msg:`As a conductor born in South Africa who has built my musical career in Rotterdam and worked with musicians from many different countries and cultures, I have always believed deeply in the power of music to transcend borders and bring people together. Competitions such as NYICC provide young and talented musicians with an important opportunity to share their artistry, challenge themselves, and take meaningful steps toward an international musical career. I sincerely wish the NYICC continued growth and great success, and I hope it will become an inspiring musical platform where exceptional young artists from around the world can be discovered, encouraged, and celebrated.` },
   { group:'Conductors', name:'Sergey Smbatyan', role:'Chief Conductor, Armenian State Symphony',
-    photo:'jury-smbatyan.jpg',
-    msg:`It is a great pleasure to congratulate the New York International Concerto Competition on creating a truly unique platform for musicians and on giving exceptional talent the opportunity to be heard, discovered, and connected with the world of classical music. Competitions such as NYICC do much more than recognize musical excellence — they create meaningful connections between artists and the international musical community. May the competition continue to discover the best, inspire a new generation of musicians, and bring their unique voices to the world stage. I wish you continued growth, success, and many more remarkable artists whose journeys begin here!` },
+    photo:'jury-smbatyan.jpg', msg:'' },
   { group:'Piano', name:'Prof. Christopher Hinterhuber', role:'Piano',
     photo:'jury-hinterhuber.jpg', msg:'' },
-  { group:'Violin', name:'Prof. Cihat Aşkın', role:'Violinist and Academic',
-    photo:'jury-askin.jpg',
-    msg:`Creating opportunities for gifted musicians to perform with professional orchestras is essential not only for recognizing artistic excellence, but also for supporting the development of meaningful international careers.
-In this respect, the New York International Concerto Competition represents a highly valuable initiative, building a strong bridge between emerging musical talent and the international concert stage.
-The Competition’s artistic scope—embracing piano, violin, cello, flute, and voice—and its emphasis on musicality, technique, interpretation, expression, and overall artistry reflect a serious and comprehensive vision.
-The opportunity for category winners to perform with professional orchestras at distinguished European venues, including the Tonhalle in Zurich, the ORF RadioKulturhaus in Vienna, Smetana Hall in Prague, and Haydn Hall in Eisenstadt, gives this initiative particular significance. These performances transform the Competition from a conventional award programme into an international career platform offering its laureates genuine professional experience and visibility.
-For an emerging artist, appearing as a soloist with a professional orchestra can be a defining moment and an important turning point in an artistic journey. I therefore find the Competition’s mission to discover exceptional musicians who have not yet received sufficient international recognition especially meaningful.
-I warmly congratulate the institutions, artistic leaders, organizers, and members of the team whose dedication and vision have made this ambitious initiative possible.
-By connecting New York with major European centres of music, the New York International Concerto Competition has the potential to create valuable opportunities for the next generation of classical artists and to make a lasting contribution to international musical life.
-I sincerely hope that the Competition will preserve the highest artistic standards, establish strong institutional continuity, and develop into a respected international platform introducing outstanding new soloists to the global music community.
-With my warmest congratulations and best wishes for continued success.` },
+  { group:'Violin', name:'Prof. Cihat Aşkın', role:'Violin',
+    photo:'jury-askin.jpg', msg:'' },
   { group:'Cello', name:'Prof. Meehae Ryo', role:'Cello · Artistic Director, IMK Vienna',
     photo:'jury-ryo.jpg',
     msg:`As the Artistic Director of IMK Vienna, it is my great joy and privilege to extend my heartfelt congratulations on this meaningful occasion. I am especially delighted to see this competition becoming a vibrant bridge between Europe and the United States, bringing together talented musicians, distinguished artists, and musical institutions through the universal language of classical music. May this competition continue to discover and inspire exceptional young artists, strengthen the musical connection between Europe and America, and grow into an important international platform for the next generation of classical musicians.` },
