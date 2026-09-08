@@ -527,6 +527,8 @@ main{min-height:60vh}
   .rep-list{padding-left:30px}
 }
 .reg-article h3{font-size:22px;margin-bottom:10px}
+.file-format{display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;background:var(--paper);border:1px solid var(--hairline);padding:5px 10px;margin:8px 0 2px;color:var(--ink)}
+.file-example{display:block;font-size:12.5px;color:var(--stone);font-style:italic;margin-top:4px}
 .reg-note{color:var(--ink-soft);font-size:15px;line-height:1.7;margin:0 0 14px;padding:12px 16px;border-left:2px solid var(--brass);background:var(--paper)}
 .reg-article h3 .art{font-family:var(--font-body);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:4px}
 .reg-article ul{list-style:none}
@@ -923,8 +925,8 @@ footer a:hover{color:var(--white)}
         <div class="card">
           <h3>1 &middot; Apply &amp; Submit Online</h3>
           <p>Complete the application on this website, pay the entry fee by
-          card, and submit your performance as an unedited video via a YouTube
-          link. No travel is required to participate in the competition.</p>
+          card, and submit your performance as an unedited video via a Google
+          Drive link. No travel is required to participate in the competition.</p>
           <p style="margin-top:12px;font-style:italic;font-size:13px;color:var(--stone)">For
           full details, please refer to the Application Guide in the top menu.</p>
         </div>
@@ -1230,7 +1232,7 @@ footer a:hover{color:var(--white)}
     <h2 class="section-title">Who can apply</h2>
     <table class="rule-table">
       <tr><th>Item</th><th>Details</th></tr>
-      <tr><td>Format</td><td>International online music competition. All judging is conducted by online video submission (YouTube link).</td></tr>
+      <tr><td>Format</td><td>International online music competition. All judging is conducted by online video submission (Google Drive link).</td></tr>
       <tr><td>Categories</td><td>Piano &middot; Violin &middot; Flute &middot; Cello &middot; Voice &mdash; one category per application</td></tr>
       <tr><td>Age</td><td><strong>No age limit.</strong> All participants are judged by the same artistic standard.</td></tr>
       <tr><td>Nationality</td><td>Open to musicians of all nationalities</td></tr>
@@ -1273,7 +1275,7 @@ footer a:hover{color:var(--white)}
         <h3><span class="art">Article 1</span>General Provisions</h3>
         <ul>
           <li>The competition is an international online music competition open to musicians of all nationalities.</li>
-          <li>All judging is conducted by online video submission (YouTube link).</li>
+          <li>All judging is conducted by online video submission (Google Drive link).</li>
           <li>English is the official language of the competition.</li>
         </ul>
       </div>
@@ -1299,12 +1301,17 @@ footer a:hover{color:var(--white)}
       <div class="reg-article">
         <h3><span class="art">Article 5</span>Video Submission</h3>
         <ul>
-          <li>Before performing, the applicant must state aloud their full name, category, the work to be performed, and the recording date.</li>
-          <li>The performer&rsquo;s hands, instrument and face must be visible on screen throughout. Camera switching or multi-angle compositing is prohibited.</li>
-          <li>The video must be an unedited, continuous recording.</li>
-          <li>Video and audio quality must be sufficient to clearly identify the applicant.</li>
-          <li>Only videos recorded within the designated period (from the opening of applications until the day before the deadline) are accepted.</li>
-          <li>The use of AI-generated content, deepfakes, or synthesized audio is strictly prohibited.</li>
+          <li>The performer&rsquo;s hands, instrument, and face must be clearly visible throughout the performance.</li>
+          <li>The video must be a continuous, unedited recording of the submitted work. Minor adjustments to image brightness, contrast, or audio level are permitted, provided that they do not alter the performance itself.</li>
+          <li>Video and audio quality must be sufficient for the Jury to clearly evaluate the performance and identify the applicant.</li>
+          <li>Videos recorded on or after July 1, 2026, will be accepted.</li>
+          <li>By submitting the application, the applicant confirms that the video was recorded within the eligible period and that the performance is their own work.</li>
+          <li>The use of AI-generated performances, deepfakes, synthesized audio, or any technology that materially alters the performance is strictly prohibited.</li>
+          <li>The Organizer reserves the right to request additional verification or supporting materials if the authenticity of a submission is reasonably questioned.</li>
+          <li>The video must be uploaded to <strong>Google Drive</strong>, and the shareable link must be submitted with the application. The link must remain accessible (&ldquo;Anyone with the link can view&rdquo;) until the results are announced.</li>
+          <li>The video file in the Google Drive link must be named in the following format:
+            <span class="file-format">Category_LastName_FirstName_Country.mp4</span>
+            <span class="file-example">e.g. Violin_Doe_John_USA.mp4</span></li>
         </ul>
       </div>
       <div class="reg-article">
@@ -1738,7 +1745,7 @@ const CONFIG = {
     { date:'1 Dec 2026', title:'Regular application period', tag:'USD 200',
       desc:'Entries continue at the regular fee until the final deadline.' },
     { date:'31 Jan 2027', title:'Application deadline', hl:true,
-      desc:'Application form, documents and video link must be submitted, with payment completed.' },
+      desc:'Application form, documents and Google Drive video link must be submitted, with payment completed.' },
     { date:'1–27 Feb 2027', title:'Judging',
       desc:'The international jury evaluates all submissions on musicality, technique, interpretation, expression and overall artistry.' },
     { date:'28 Feb 2027', title:'Results announced', hl:true,
