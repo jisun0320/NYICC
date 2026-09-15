@@ -173,8 +173,16 @@ nav.main-nav{display:flex;align-items:center;gap:2px;margin-left:auto}
 .venue-bg::after{
   content:"";position:absolute;inset:0;
   background:
-    linear-gradient(180deg,rgba(10,17,32,.45) 0%,rgba(10,17,32,.30) 35%,rgba(10,17,32,.55) 60%,rgba(10,17,32,.92) 100%),
-    linear-gradient(90deg,rgba(10,17,32,.75) 0%,rgba(10,17,32,.30) 42%,rgba(10,17,32,0) 68%);
+    linear-gradient(180deg,rgba(10,17,32,.62) 0%,rgba(10,17,32,.50) 35%,rgba(10,17,32,.66) 60%,rgba(10,17,32,.94) 100%),
+    linear-gradient(90deg,rgba(10,17,32,.85) 0%,rgba(10,17,32,.55) 42%,rgba(10,17,32,.15) 68%);
+}
+@media (max-width:820px){
+  .venue-bg::after{
+    background:
+      linear-gradient(180deg,rgba(10,17,32,.86) 0%,rgba(10,17,32,.80) 40%,rgba(10,17,32,.86) 70%,rgba(10,17,32,.97) 100%);
+  }
+  .hero h1{text-shadow:0 2px 18px rgba(0,0,0,.85)}
+  .hero .hero-sub{color:rgba(255,255,255,.96);text-shadow:0 1px 10px rgba(0,0,0,.85)}
 }
 .hero-content{
   position:relative;z-index:2;width:100%;max-width:var(--maxw);
@@ -1374,34 +1382,34 @@ footer a:hover{color:var(--white)}
         <details class="rep-item" open>
           <summary>
             <span class="rep-name">Piano</span>
-            <span class="rep-meta">Maximum 30 minutes</span>
+            <span class="rep-meta">Maximum 20 minutes</span>
             <span class="rep-chev" aria-hidden="true"></span>
           </summary>
-          <ol class="rep-list"><li>Participants must perform one complete movement from a piano concerto of their choice.</li><li>The maximum performance time is 30 minutes.</li><li>The selected movement must be performed in its entirety, from beginning to end. Arbitrary cuts, omissions, or edits to the solo part are not permitted.</li><li>Performances may be accompanied by either piano reduction or orchestra.</li><li>When performing with piano accompaniment, standard cuts or reductions of orchestral tutti passages are permitted.</li><li>If the selected movement includes a cadenza, it should be included in the performance.</li></ol>
+          <ol class="rep-list"><li>Participants must perform one complete movement from a piano concerto of their choice.</li><li>The maximum performance time is 20 minutes.</li><li>The selected movement must be performed in its entirety, from beginning to end. Arbitrary cuts, omissions, or edits to the solo part are not permitted.</li><li>Performances may be accompanied by either piano reduction or orchestra.</li><li>When performing with piano accompaniment, standard cuts or reductions of orchestral tutti passages are permitted.</li><li>If the selected movement includes a cadenza, it should be included in the performance.</li></ol>
         </details>
         <details class="rep-item">
           <summary>
             <span class="rep-name">Violin</span>
-            <span class="rep-meta">Maximum 30 minutes</span>
+            <span class="rep-meta">Maximum 20 minutes</span>
             <span class="rep-chev" aria-hidden="true"></span>
           </summary>
-          <ol class="rep-list"><li>Participants must perform one complete movement from a violin concerto of their choice.</li><li>The maximum performance time is 30 minutes.</li><li>The selected movement must be performed in its entirety, from beginning to end.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted.</li><li>Performances may be accompanied by either piano reduction or orchestra.</li><li>When performing with piano accompaniment, standard cuts or reductions of orchestral tutti passages are permitted.</li><li>If the selected work includes a cadenza, the cadenza must be included in the performance.</li></ol>
+          <ol class="rep-list"><li>Participants must perform one complete movement from a violin concerto of their choice.</li><li>The maximum performance time is 20 minutes.</li><li>The selected movement must be performed in its entirety, from beginning to end.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted.</li><li>Performances may be accompanied by either piano reduction or orchestra.</li><li>When performing with piano accompaniment, standard cuts or reductions of orchestral tutti passages are permitted.</li><li>If the selected work includes a cadenza, the cadenza must be included in the performance.</li></ol>
         </details>
         <details class="rep-item">
           <summary>
             <span class="rep-name">Cello</span>
-            <span class="rep-meta">Maximum 30 minutes</span>
+            <span class="rep-meta">Maximum 20 minutes</span>
             <span class="rep-chev" aria-hidden="true"></span>
           </summary>
-          <ol class="rep-list"><li>Participants must perform one complete movement from a cello concerto of their choice.</li><li>The maximum performance time is 30 minutes.</li><li>The selected movement must be performed in its entirety, from beginning to end.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted.</li><li>Performances may be accompanied by either piano reduction or orchestra.</li></ol>
+          <ol class="rep-list"><li>Participants must perform one complete movement from a cello concerto of their choice.</li><li>The maximum performance time is 20 minutes.</li><li>The selected movement must be performed in its entirety, from beginning to end.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted.</li><li>Performances may be accompanied by either piano reduction or orchestra.</li></ol>
         </details>
         <details class="rep-item">
           <summary>
             <span class="rep-name">Flute</span>
-            <span class="rep-meta">Maximum 30 minutes</span>
+            <span class="rep-meta">Maximum 20 minutes</span>
             <span class="rep-chev" aria-hidden="true"></span>
           </summary>
-          <ol class="rep-list"><li>Participants must perform either one complete movement from a flute concerto of their choice, or a complete single-movement concert work for flute and orchestra.</li><li>The maximum performance time is 30 minutes.</li><li>The selected work or movement must be performed in its entirety, from beginning to end.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted.</li><li>Performances may be accompanied by either piano reduction or orchestra.</li></ol>
+          <ol class="rep-list"><li>Participants must perform either one complete movement from a flute concerto of their choice, or a complete single-movement concert work for flute and orchestra.</li><li>The maximum performance time is 20 minutes.</li><li>The selected work or movement must be performed in its entirety, from beginning to end.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted.</li><li>Performances may be accompanied by either piano reduction or orchestra.</li></ol>
         </details>
         <details class="rep-item">
           <summary>
@@ -1938,7 +1946,8 @@ const JURY = [
     photo:'jury-ryo.jpg',
     msg:`As the Artistic Director of IMK Vienna, it is my great joy and privilege to extend my heartfelt congratulations on this meaningful occasion. I am especially delighted to see this competition becoming a vibrant bridge between Europe and the United States, bringing together talented musicians, distinguished artists, and musical institutions through the universal language of classical music. May this competition continue to discover and inspire exceptional young artists, strengthen the musical connection between Europe and America, and grow into an important international platform for the next generation of classical musicians.` },
   { group:'Flute', name:'Prof. Luisa Sello', role:'Flute',
-    photo:'jury-sello.jpg', msg:'' },
+    photo:'jury-sello.jpg',
+    msg:`I would like to extend my warmest congratulations on the start of this outstanding International Competition.\nThe entire event is with an exceptional level of professionalism and attention to detail. The organization is impeccable.\nThe combination of excellent organization, a professional orchestra, and such a distinguished international jury makes this competition a truly exceptional event.\nI would particularly like to highlight the presence of a live orchestra, which is an extremely rare and valuable feature in an international competition. The opportunity for contestants to perform with an orchestra represents an extraordinary experience and adds a remarkable artistic dimension to the competition. It is a great credit to the organizers that they have chosen to offer such an important opportunity to the participants.\nEqually impressive is the truly international and highly distinguished level of the jury, with members of artistic expertise, experience, and recognition from the international music community. I am extremely honored to be part of it and contribute to the prestige of the competition.\nPlease accept my sincere congratulations for your dedication and for the remarkable standard you have achieved. I wish you continued success and hope that the competition will grow from strength to strength in the years to come.\nWith my warmest congratulations and best wishes.` },
   { group:'Voice', name:'Prof. Vladimir Kiradjiev', role:'Voice · Opera Conductor',
     photo:'jury-kiradjiev.jpg', msg:'' },
 ];
