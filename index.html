@@ -565,6 +565,21 @@ main{min-height:60vh}
 .yt-role{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-top:3px}
 .yt-work{font-size:13px;color:var(--ink-soft);margin-top:7px;line-height:1.45}
 .yt-hall{font-size:12px;color:var(--stone);margin-top:3px}
+/* FAQ */
+.faq-group{margin-bottom:34px}
+.faq-h{font-family:var(--font-display);font-size:24px;font-weight:500;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--hairline)}
+.faq-item{border-bottom:1px solid var(--hairline)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:14px;padding:14px 0;font-size:15.5px;font-weight:500;color:var(--ink);line-height:1.5}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::before{content:"Q";flex:0 0 auto;font-family:var(--font-display);font-size:18px;color:var(--brass);line-height:1.3}
+.faq-item summary .faq-q{flex:1 1 auto}
+.faq-item summary .rep-chev{margin-left:auto;margin-top:6px}
+.faq-a{padding:0 0 18px 30px;color:var(--ink-soft);font-size:14.5px;line-height:1.75}
+.faq-a p{margin:0 0 10px}
+.faq-a p:last-child{margin-bottom:0}
+.faq-a ol{margin:6px 0 10px 20px;padding:0}
+.faq-a ol li{margin-bottom:6px}
+@media (max-width:600px){.faq-a{padding-left:0}.faq-h{font-size:21px}}
 .vod-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
 .chip{
   border:1px solid var(--hairline);background:var(--white);padding:8px 18px;
@@ -660,7 +675,7 @@ main{min-height:60vh}
   border-bottom:2px solid var(--brass);transform:rotate(45deg);
   transition:transform .25s;flex-shrink:0;margin-right:2px;
 }
-.rep-item[open] .rep-chev{transform:rotate(-135deg)}
+.rep-item[open] .rep-chev,.faq-item[open] .rep-chev{transform:rotate(-135deg)}
 .rep-list{
   margin:0;padding:4px 26px 22px 46px;color:var(--ink-soft);font-size:14.5px;
   line-height:1.7;
@@ -958,6 +973,7 @@ footer a:hover{color:var(--white)}
         <div class="dropdown">
           <a href="#guide">Application Guide</a>
           <a href="#guide/repertoire">Competition Repertoire</a>
+          <a href="#guide/faq">FAQ</a>
         </div>
       </div>
       <div class="nav-item"><a class="nav-link" data-route="schedule" href="#schedule">Schedule &amp; Benefits</a></div>
@@ -1451,6 +1467,8 @@ footer a:hover{color:var(--white)}
         <ul>
           <li>The performer&rsquo;s hands, instrument, and face must be clearly visible throughout the performance.</li>
           <li>The video must be a continuous, unedited recording of the submitted work. Minor adjustments to image brightness, contrast, or audio level are permitted, provided that they do not alter the performance itself.</li>
+          <li>The only permitted edit is trimming the recording after the 20-minute mark; the portion up to that point must remain continuous and unedited.</li>
+          <li>The camera must remain fixed throughout the recording. Moving the camera or operating the zoom during the performance is not permitted.</li>
           <li>Video and audio quality must be sufficient for the Jury to clearly evaluate the performance and identify the applicant.</li>
           <li>Videos recorded on or after July 1, 2026, will be accepted.</li>
           <li>By submitting the application, the applicant confirms that the video was recorded within the eligible period and that the performance is their own work.</li>
@@ -1525,7 +1543,7 @@ footer a:hover{color:var(--white)}
             <span class="rep-meta">Maximum 20 minutes</span>
             <span class="rep-chev" aria-hidden="true"></span>
           </summary>
-          <ol class="rep-list"><li>Participants must perform one complete movement from a piano concerto of their choice.</li><li>The maximum performance time is 20 minutes.</li><li>The selected movement must be performed in its entirety, from beginning to end. Arbitrary cuts, omissions, or edits to the solo part are not permitted.</li><li>Performances may be accompanied by either piano reduction or orchestra.</li><li>When performing with piano accompaniment, standard cuts or reductions of orchestral tutti passages are permitted.</li><li>If the selected movement includes a cadenza, it should be included in the performance.</li></ol>
+          <ol class="rep-list"><li>Participants perform one or more movements from a concerto or concertante work for piano and orchestra of their choice. Any movement may be selected.</li><li>The maximum performance time is 20 minutes, measured from the beginning to the end of the video. A shorter performance carries no disadvantage.</li><li>The performance must begin at the start of the selected movement or work and continue without interruption. If the movement is shorter than 20 minutes, participants may continue directly into the next movement. If the performance exceeds 20 minutes, stop at the 20-minute mark and submit up to that point.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted. Skipping sections or splicing passages together is not permitted.</li><li>If a cadenza falls within the 20-minute limit, it must be performed and may not be omitted. A cadenza that would occur after the 20-minute mark is not required.</li><li>Performances may be accompanied by either live piano (piano reduction) or live orchestra. Pre-recorded accompaniment is not permitted.</li><li>When performing with piano accompaniment, standard cuts or reductions of orchestral tutti passages are permitted.</li><li>Performing from memory is not required.</li></ol>
         </details>
         <details class="rep-item">
           <summary>
@@ -1533,7 +1551,7 @@ footer a:hover{color:var(--white)}
             <span class="rep-meta">Maximum 20 minutes</span>
             <span class="rep-chev" aria-hidden="true"></span>
           </summary>
-          <ol class="rep-list"><li>Participants must perform one complete movement from a violin concerto of their choice.</li><li>The maximum performance time is 20 minutes.</li><li>The selected movement must be performed in its entirety, from beginning to end.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted.</li><li>Performances may be accompanied by either piano reduction or orchestra.</li><li>When performing with piano accompaniment, standard cuts or reductions of orchestral tutti passages are permitted.</li><li>If the selected work includes a cadenza, the cadenza must be included in the performance.</li></ol>
+          <ol class="rep-list"><li>Participants perform one or more movements from a concerto or concertante work for violin and orchestra of their choice. Any movement may be selected.</li><li>The maximum performance time is 20 minutes, measured from the beginning to the end of the video. A shorter performance carries no disadvantage.</li><li>The performance must begin at the start of the selected movement or work and continue without interruption. If the movement is shorter than 20 minutes, participants may continue directly into the next movement. If the performance exceeds 20 minutes, stop at the 20-minute mark and submit up to that point.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted. Skipping sections or splicing passages together is not permitted.</li><li>If a cadenza falls within the 20-minute limit, it must be performed and may not be omitted. A cadenza that would occur after the 20-minute mark is not required.</li><li>Performances may be accompanied by either live piano (piano reduction) or live orchestra. Pre-recorded accompaniment is not permitted.</li><li>When performing with piano accompaniment, standard cuts or reductions of orchestral tutti passages are permitted.</li><li>Performing from memory is not required.</li></ol>
         </details>
         <details class="rep-item">
           <summary>
@@ -1541,7 +1559,7 @@ footer a:hover{color:var(--white)}
             <span class="rep-meta">Maximum 20 minutes</span>
             <span class="rep-chev" aria-hidden="true"></span>
           </summary>
-          <ol class="rep-list"><li>Participants must perform one complete movement from a cello concerto of their choice.</li><li>The maximum performance time is 20 minutes.</li><li>The selected movement must be performed in its entirety, from beginning to end.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted.</li><li>Performances may be accompanied by either piano reduction or orchestra.</li></ol>
+          <ol class="rep-list"><li>Participants perform one or more movements from a concerto or concertante work for cello and orchestra of their choice. Any movement may be selected.</li><li>The maximum performance time is 20 minutes, measured from the beginning to the end of the video. A shorter performance carries no disadvantage.</li><li>The performance must begin at the start of the selected movement or work and continue without interruption. If the movement is shorter than 20 minutes, participants may continue directly into the next movement. If the performance exceeds 20 minutes, stop at the 20-minute mark and submit up to that point.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted. Skipping sections or splicing passages together is not permitted.</li><li>If a cadenza falls within the 20-minute limit, it must be performed and may not be omitted. A cadenza that would occur after the 20-minute mark is not required.</li><li>Performances may be accompanied by either live piano (piano reduction) or live orchestra. Pre-recorded accompaniment is not permitted.</li><li>When performing with piano accompaniment, standard cuts or reductions of orchestral tutti passages are permitted.</li><li>Performing from memory is not required.</li></ol>
         </details>
         <details class="rep-item">
           <summary>
@@ -1549,7 +1567,7 @@ footer a:hover{color:var(--white)}
             <span class="rep-meta">Maximum 20 minutes</span>
             <span class="rep-chev" aria-hidden="true"></span>
           </summary>
-          <ol class="rep-list"><li>Participants must perform either one complete movement from a flute concerto of their choice, or a complete single-movement concert work for flute and orchestra.</li><li>The maximum performance time is 20 minutes.</li><li>The selected work or movement must be performed in its entirety, from beginning to end.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted.</li><li>Performances may be accompanied by either piano reduction or orchestra.</li></ol>
+          <ol class="rep-list"><li>Participants perform one or more movements from a concerto or concertante work for flute and orchestra of their choice. Any movement may be selected.</li><li>The maximum performance time is 20 minutes, measured from the beginning to the end of the video. A shorter performance carries no disadvantage.</li><li>The performance must begin at the start of the selected movement or work and continue without interruption. If the movement is shorter than 20 minutes, participants may continue directly into the next movement. If the performance exceeds 20 minutes, stop at the 20-minute mark and submit up to that point.</li><li>Arbitrary cuts, omissions, or edits to the solo part are not permitted. Skipping sections or splicing passages together is not permitted.</li><li>If a cadenza falls within the 20-minute limit, it must be performed and may not be omitted. A cadenza that would occur after the 20-minute mark is not required.</li><li>Performances may be accompanied by either live piano (piano reduction) or live orchestra. Pre-recorded accompaniment is not permitted.</li><li>When performing with piano accompaniment, standard cuts or reductions of orchestral tutti passages are permitted.</li><li>Performing from memory is not required.</li></ol>
         </details>
         <details class="rep-item">
           <summary>
@@ -1560,6 +1578,56 @@ footer a:hover{color:var(--white)}
           <ol class="rep-list"><li>Participants must submit two opera arias of their choice.</li><li>The arias must be selected from different operas by different composers.</li><li>Each aria must be performed in its original language.</li><li>Each aria should, in principle, be performed in its original key.</li><li>Each aria must be performed in its complete form. The recitative may be omitted; otherwise, arbitrary cuts, omissions, or edits are not permitted.</li><li>The maximum total performance time is 20 minutes.</li><li>The video must be a single continuous, unedited recording.</li><li>Performances must use either live piano accompaniment or orchestral accompaniment.</li></ol>
         </details>
     </div>
+  </div>
+
+  <div class="section" id="guide-faq">
+    <div class="eyebrow">Frequently Asked Questions</div>
+    <h2 class="section-title">FAQ</h2>
+    <p class="lede" style="margin-bottom:28px">Answers to the questions we receive most often about repertoire, performance time, accompaniment, video submission, application and payment. Where these answers add detail to the Competition Regulations, both apply together.</p>
+    <div class="faq-list">
+      <div class="faq-group">
+        <h3 class="faq-h">1. Repertoire and Performance Time</h3>
+        <details class="faq-item"><summary><span class="faq-q">Does the rule mean I should perform one movement within 20 minutes, or that I need to choose a movement that is 20 minutes long?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>20 minutes is the maximum permitted time, not a target you need to fill. An 8-minute movement and an 18-minute movement are both acceptable, and a shorter performance time carries no disadvantage.</p><p>If the movement you select exceeds 20 minutes, play it continuously from the beginning and submit only up to the 20-minute mark. Skipping the middle section or splicing together several parts is not permitted.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">The movement I want to play is slightly over 20 minutes. May I shorten part of it?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>The solo part may not be shortened. There are two options:</p><ol><li>Apply customary cuts to the orchestral tutti passages to fit within 20 minutes.</li><li>Play the movement from the beginning, stop at the 20-minute mark, and submit only up to that point.</li></ol><p>In both cases, omitting part of the solo part or cutting and joining different sections is not permitted.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">How is the performance time measured?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>It is measured from the beginning to the end of the video.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">Must I perform the first movement only?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>No. You may freely choose any movement — first, second, third, and so on.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">May I perform two or more movements?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Yes. If the movement you select is shorter than 20 minutes, you may play it to the end and then continue into the next movement. However, the total performance time may not exceed 20 minutes. If you reach 20 minutes while playing the next movement, submit only up to that point.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">Are single-movement concertos or concertante works (e.g., Rachmaninoff's <em>Rhapsody on a Theme of Paganini</em>, Gershwin's <em>Rhapsody in Blue</em>, Liszt's <em>Totentanz</em>) acceptable?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Yes. If the work exceeds 20 minutes, play it from the beginning and submit only up to the 20-minute mark.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">Whose cadenza should I perform?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Any of the following is acceptable: the composer's cadenza, a cadenza by another composer or performer, or a cadenza you have written yourself. Please state the composer of the cadenza you used on your application form.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">May I omit the cadenza?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>If the cadenza falls within the 20-minute limit, it must be performed. Skipping the cadenza and joining the following passage is not permitted.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">Must I perform from memory?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>No. Playing from memory is not required; you may perform with the score.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">How much may I cut when making tutti cuts?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Cuts are permitted within the range accepted in published piano-reduction scores or in general performance practice. A typical example is shortening a long orchestral passage in which the soloist rests. The solo part may not be shortened.</p></div></details>
+      </div>
+      <div class="faq-group">
+        <h3 class="faq-h">2. Accompaniment</h3>
+        <details class="faq-item"><summary><span class="faq-q">Do I have to arrange my own accompanist?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Yes. Participants arrange their own accompanist. The accompanist is not evaluated.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">May I perform with a pre-recorded accompaniment (backing track)?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>No. Only live piano accompaniment or live orchestral accompaniment performed in real time is accepted.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">May I submit a video of a past performance with orchestra?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Yes. However, the video must have been recorded on or after July 1, 2026, and must meet all other video requirements.</p></div></details>
+      </div>
+      <div class="faq-group">
+        <h3 class="faq-h">3. Video Submission</h3>
+        <details class="faq-item"><summary><span class="faq-q">May I edit the video?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>No. The video must be a single, continuous, unedited recording from beginning to end. Video cuts, combining multiple takes, and audio correction or editing are all prohibited. The only exception: if the performance exceeds 20 minutes, you may cut off the portion after the 20-minute mark.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">Is there anything to keep in mind when filming?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>The camera must be fixed. Moving the camera or operating the zoom during filming is not permitted. The participant's face and both hands must be visible throughout the video. Sound quality is important for the evaluation, so please check your recording setup in advance.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">Videos recorded from what date are accepted?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Only videos recorded on or after July 1, 2026 are accepted.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">May I film with a smartphone?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Yes. The clarity of the picture and sound matters more than the equipment used.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">How do I submit the video?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Please submit it as a Google Drive link. Do not delete the link or change it to private until the judging is complete.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">May I change my video after submitting?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Submitted applications cannot be changed. If duplicate applications are received, the first application submitted will be the one evaluated.</p></div></details>
+      </div>
+      <div class="faq-group">
+        <h3 class="faq-h">4. Application and Payment</h3>
+        <details class="faq-item"><summary><span class="faq-q">When is my application complete?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Your application is complete only once payment of the entry fee has been confirmed. Even if you have submitted the application form, it is not considered received if payment has not been made. If an application is not received due to missing payment, the responsibility lies with the applicant. Please be sure to complete payment after submitting the form.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">How can I confirm that my application was received?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Once payment is confirmed, a confirmation email will be sent. If you have not received the email, please check your spam folder and then contact us by email.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">Can the entry fee be refunded?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Entry fees are non-refundable after payment, except where the competition is cancelled by the Organizer.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">How should I write my name on the application form?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Please write your name exactly as it appears in English on your passport. If the name of the payer differs from that of the participant (e.g., a parent making the payment), please write the payer's (cardholder's) name separately at the bottom of the application form.</p></div></details>
+      </div>
+      <div class="faq-group">
+        <h3 class="faq-h">5. If You Cannot Use the Online Form or PayPal (Including Guidance for Participants in China)</h3>
+        <details class="faq-item"><summary><span class="faq-q">I cannot access the online application form, or paying by PayPal is difficult.</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Please contact us by email. We will send you a written application form and provide instructions for paying the entry fee by bank transfer. International transfer fees are borne by the applicant. Please be sure to include the participant's name when making the transfer.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">Google cannot be used in China. How do I submit my video?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Please contact us by email and we will provide an alternative submission method.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">Does the same deadline apply to written applications?</span><span class="rep-chev" aria-hidden="true"></span></summary><div class="faq-a"><p>Yes. Both the written application form and payment of the entry fee must be completed by the same deadline. As the process may take time, please contact us at least 1–2 weeks before the deadline.</p></div></details>
+      </div>
+    </div>
+    <p class="divider-note" style="margin-top:26px">Still have a question? Email us at <a href="mailto:nyicc.official@gmail.com" style="color:var(--brass)">nyicc.official@gmail.com</a>.</p>
   </div>
 
   <div class="section" style="text-align:center">
@@ -1901,6 +1969,7 @@ footer a:hover{color:var(--white)}
         <h4>Competition</h4>
         <a href="#about">About</a>
         <a href="#guide">Application Guide</a>
+        <a href="#guide/faq">FAQ</a>
         <a href="#schedule">Schedule &amp; Benefits</a>
         <a href="#venues">Venues &amp; Orchestras</a>
         <a href="#jury">Jury</a>
